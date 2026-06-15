@@ -20,7 +20,7 @@ app.add_middleware(
 )
 
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
-index = pc.Index("vidhisethu")
+index = pc.Index("lawlens")
 model = SentenceTransformer('all-MiniLM-L6-v2')
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 df = pd.read_excel("bns.xlsx")
@@ -34,7 +34,7 @@ except FileNotFoundError:
 
 @app.get("/")
 def home():
-    return {"message": "Vidhi sethu API is running 🚀"}
+    return {"message": "Law Lens API is running 🚀"}
 
 @app.get("/search")
 def search(query: str):

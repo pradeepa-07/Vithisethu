@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vidhi sethu - BNS Legal Assistant</title>
+    <title>Law Lens - BNS Legal Assistant</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -46,7 +46,6 @@
 
         nav { 
             background: var(--bg-secondary); 
-            border-bottom: 2px solid var(--border-color);
             padding: 20px 30px;
             display: flex;
             flex-direction: row;
@@ -201,7 +200,6 @@
         .send-row input { margin-bottom: 0; }
         .send-row button { width: auto; padding: 14px 20px; }
 
-        /* Crisis banner */
         .crisis-banner {
             display: none;
             background: #fff3cd;
@@ -225,7 +223,21 @@
         body.dark-mode .crisis-banner .helpline-name { color: #eee; }
         .crisis-banner .helpline-number { color: #e65100; font-weight: bold; font-size: 1rem; }
 
-        /* IPC banner */
+        .police-btn {
+            margin-top: 12px;
+            padding: 14px;
+            background: #e65100;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .police-btn:hover { background: #bf360c; }
+
         .ipc-replaced {
             background: #fdecea;
             border: 2px solid #e53935;
@@ -249,21 +261,6 @@
         .bns-replacement h4 { color: #2e7d32; margin-bottom: 8px; }
         .bns-replacement p { color: #444; font-size: 0.9rem; line-height: 1.7; }
         body.dark-mode .bns-replacement p { color: #ccc; }
-
-        .police-btn {
-            margin-top: 12px;
-            padding: 14px;
-            background: #e65100;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-        .police-btn:hover { background: #bf360c; }
     </style>
 </head>
 <body>
@@ -277,7 +274,7 @@
 </nav>
 
 <header>
-    <h1>Vidhi sethu</h1>
+    <h1>Law Lens</h1>
     <p>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</p>
 </header>
 
@@ -286,7 +283,7 @@
 <!-- PAGE 1: AI Assistant -->
 <div class="page active" id="page-ai">
 
-    <!-- Crisis Banner -->
+    <!-- Crisis Banner — only shows for crisis keywords -->
     <div class="crisis-banner" id="crisisBanner">
         <h4>🚨 We noticed your message may involve a serious situation</h4>
         <p>If you or someone you know is in danger or distress, please reach out immediately:</p>
@@ -316,6 +313,10 @@
                 <span class="helpline-number">📞 181</span>
             </div>
         </div>
+        <!-- Police button only inside crisis banner -->
+        <button class="police-btn" onclick="findNearbyPolice()">
+            📍 Find Nearest Police Station
+        </button>
     </div>
 
     <div id="chatBox"></div>
@@ -334,13 +335,6 @@
 
     <div class="loading" id="aiLoading">Analyzing BNS sections...</div>
     <div id="sectionCards" style="margin-top:12px;"></div>
-
-    <!-- Always visible police button at bottom -->
-    <div style="margin-top: 20px;">
-        <button class="police-btn" onclick="findNearbyPolice()">
-            📍 Find Nearest Police Station
-        </button>
-    </div>
 </div>
 
 <!-- PAGE 2: Section Lookup -->
@@ -359,8 +353,8 @@
 <!-- PAGE 4: About -->
 <div class="page" id="page-about">
     <div class="card">
-        <h3>About Vidhi sethu</h3>
-        <p>Vidhi sethu is an AI-powered legal assistant designed to help users understand the Bharatiya Nyaya Sanhita (BNS) - India's criminal law code.</p>
+        <h3>About Law Lens</h3>
+        <p>Law Lens is an AI-powered legal assistant designed to help users understand the Bharatiya Nyaya Sanhita (BNS) - India's criminal law code.</p>
     </div>
     <div class="card">
         <h3>What We Do</h3>
@@ -377,11 +371,11 @@
     </div>
     <div class="card">
         <h3>Technology</h3>
-        <p>Vidhi sethu uses RAG, Pinecone vector database, Sentence Transformers, Groq LLaMA, and OpenStreetMap for semantic search, AI explanations, and location services.</p>
+        <p>Law Lens uses RAG, Pinecone vector database, Sentence Transformers, Groq LLaMA, and Google Maps for semantic search, AI explanations, and location services.</p>
     </div>
     <div class="card">
         <h3>Disclaimer</h3>
-        <p>Vidhi sethu is for educational purposes only. Always consult a qualified legal professional before making legal decisions.</p>
+        <p>Law Lens is for educational purposes only. Always consult a qualified legal professional before making legal decisions.</p>
     </div>
 </div>
 
@@ -409,25 +403,24 @@
         const lower = query.toLowerCase();
         return crisisKeywords.some(keyword => lower.includes(keyword));
     }
+
     function findNearbyPolice() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const lat = position.coords.latitude;
-                const lng = position.coords.longitude;
-                // Use Google Maps search — no API key needed for basic search
-                const url = `https://www.google.com/maps/search/police+station/@${lat},${lng},15z`;
-                window.open(url, '_blank');
-            },
-            () => {
-                // if location denied — open Google Maps general search
-                window.open('https://www.google.com/maps/search/police+station+near+me', '_blank');
-            }
-        );
-    } else {
-        window.open('https://www.google.com/maps/search/police+station', '_blank');
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    const url = `https://www.google.com/maps/search/police+station/@${lat},${lng},15z`;
+                    window.open(url, '_blank');
+                },
+                () => {
+                    window.open('https://www.google.com/maps/search/police+station+near+me', '_blank');
+                }
+            );
+        } else {
+            window.open('https://www.google.com/maps/search/police+station', '_blank');
+        }
     }
-}
 
     function initTheme() {
         const savedTheme = localStorage.getItem('theme') || 'light';

@@ -13,9 +13,9 @@ pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 from pinecone import Pinecone, ServerlessSpec
 
 # replace the create_index part with this:
-if "vidhisethu" not in pc.list_indexes().names():
+if "lawlens" not in pc.list_indexes().names():
     pc.create_index(
-        name="vidhisethu",
+        name="lawlens",
         dimension=384,
         metric="cosine",
         spec=ServerlessSpec(
@@ -23,7 +23,7 @@ if "vidhisethu" not in pc.list_indexes().names():
             region="us-east-1"
         )
     )
-index = pc.Index("vidhisethu")
+index = pc.Index("lawlens")
 
 # load BNS dataset
 df = pd.read_excel("bns.xlsx")

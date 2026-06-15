@@ -1,4 +1,4 @@
-# Vidhi sethu - BNS Legal Assistant
+# Law Lens - BNS Legal Assistant
 
 A legal assistant powered by AI that helps users search and understand sections of the Bharatiya Nyaya Sanhita (BNS) through a web interface.
 
@@ -24,7 +24,7 @@ A legal assistant powered by AI that helps users search and understand sections 
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd vidhisethu
+   cd lawlens
    ```
 
 2. Create a virtual environment:
@@ -71,7 +71,7 @@ A legal assistant powered by AI that helps users search and understand sections 
 ## Project Structure
 
 ```
-vidhisethu/
+lawlens/
 ├── index.html              # Frontend interface
 ├── main.py                 # FastAPI backend application
 ├── setup_pinecone.py       # Pinecone index initialization script
