@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pandas
+pinecone
+sentence-transformers
+groq
+python-dotenv
+openpyxl
+langchain
+psycopg2-binary

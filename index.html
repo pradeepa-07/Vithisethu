@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhi sethu - BNS Legal Assistant</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --bg-tertiary: #f9f9f9;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --text-tertiary: #333333;
+            --border-color: #e0e0e0;
+            --border-light: #dddddd;
+            --border-hover: #cccccc;
+            --bg-hover: #eeeeee;
+            --bg-active: #e8e8e8;
+        }
+
+        body.dark-mode {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2a2a2a;
+            --bg-tertiary: #333333;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-tertiary: #d0d0d0;
+            --border-color: #444444;
+            --border-light: #3a3a3a;
+            --border-hover: #555555;
+            --bg-hover: #3a3a3a;
+            --bg-active: #404040;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background: var(--bg-primary); 
+            color: var(--text-primary); 
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav { 
+            background: var(--bg-secondary); 
+            border-bottom: 2px solid var(--border-color);
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            border-radius: 30px;
+            width: calc(100% - 40px);
+            max-width: 1000px;
+            transition: all 0.3s ease;
+        }
+        nav button {
+            flex: 1;
+            padding: 16px 28px; 
+            border: none;
+            background: transparent; 
+            color: var(--text-secondary); 
+            cursor: pointer; 
+            font-size: 1.05rem;
+            font-weight: 500;
+            text-align: center;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+        nav button:hover { background: var(--bg-hover); color: var(--text-primary); }
+        nav button.active { background: var(--bg-active); color: var(--text-primary); font-weight: 600; }
+        nav .theme-toggle {
+            flex: 1;
+            padding: 16px 28px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            min-width: 150px;
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        nav .theme-toggle:hover { border-color: var(--text-primary); background: var(--bg-hover); }
+
+        .main-content { flex: 1; padding: 0; }
+
+        header { text-align: center; padding: 20px 20px 10px; }
+        header h1 { font-size: 2.5rem; color: var(--text-primary); }
+        header p { color: var(--text-secondary); margin-top: 6px; }
+
+        .page { display: none; max-width: 700px; margin: 0 auto; padding: 20px; }
+        .page.active { display: block; }
+        #page-ai.expanded { max-width: 100%; padding: 20px 40px; }
+
+        input[type="text"], input[type="number"] {
+            width: 100%; padding: 14px 18px; border-radius: 10px;
+            border: 2px solid var(--border-light); 
+            background: var(--bg-tertiary); 
+            color: var(--text-primary);
+            font-size: 1rem; outline: none; margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+        input:focus { border-color: var(--text-primary); }
+
+        button.primary {
+            width: 100%; padding: 14px; 
+            background: var(--text-primary); 
+            color: var(--bg-primary);
+            border: none; border-radius: 10px; font-size: 1rem;
+            font-weight: bold; cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button.primary:hover { opacity: 0.85; }
+
+        .card {
+            background: var(--bg-tertiary); border-radius: 10px;
+            padding: 20px; margin-top: 20px; border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .card h3 { color: var(--text-primary); margin-bottom: 12px; }
+        .card p { color: var(--text-tertiary); line-height: 1.7; }
+
+        .section-card {
+            background: var(--bg-tertiary); border-radius: 10px;
+            padding: 16px 20px; margin-top: 12px; border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .section-card h4 { color: var(--text-primary); margin-bottom: 6px; }
+        .section-card p { color: var(--text-secondary); font-size: 0.9rem; }
+
+        .chip {
+            display: inline-block; 
+            background: var(--bg-tertiary); 
+            border: 1px solid var(--border-hover);
+            color: var(--text-tertiary); 
+            padding: 8px 14px; 
+            border-radius: 20px;
+            font-size: 0.85rem; 
+            cursor: pointer; 
+            margin: 4px;
+            transition: all 0.3s ease;
+        }
+        .chip:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+        .loading { text-align: center; color: var(--text-primary); padding: 20px; display: none; }
+
+        .case-card {
+            background: var(--bg-tertiary); border-radius: 10px;
+            padding: 20px; margin-top: 12px; 
+            border-left: 4px solid var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        .case-card h4 { color: var(--text-primary); margin-bottom: 8px; }
+        .case-card .tag {
+            display: inline-block; background: var(--bg-active); color: var(--text-secondary);
+            padding: 3px 10px; border-radius: 10px; font-size: 0.8rem; margin-bottom: 10px;
+        }
+        .case-card p { color: var(--text-tertiary); line-height: 1.6; font-size: 0.95rem; }
+        .case-card .verdict { color: var(--text-primary); margin-top: 10px; font-weight: bold; }
+
+        #chatBox {
+            min-height: 300px;
+            max-height: 420px;
+            overflow-y: auto;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .msg-user {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            padding: 12px 16px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 8px 0 8px auto;
+            text-align: right;
+            line-height: 1.6;
+        }
+        .msg-ai {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 12px 16px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 8px auto 8px 0;
+            line-height: 1.6;
+            border: 1px solid var(--border-color);
+        }
+        .send-row { display: flex; gap: 10px; margin-bottom: 12px; }
+        .send-row input { margin-bottom: 0; }
+        .send-row button { width: auto; padding: 14px 20px; }
+
+        /* Crisis banner */
+        .crisis-banner {
+            display: none;
+            background: #fff3cd;
+            border: 2px solid #ff9800;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+        body.dark-mode .crisis-banner { background: #3a2a00; border-color: #ff9800; }
+        .crisis-banner h4 { color: #e65100; margin-bottom: 10px; font-size: 1rem; }
+        .crisis-banner p { color: #555; font-size: 0.9rem; margin-bottom: 4px; line-height: 1.6; }
+        body.dark-mode .crisis-banner p { color: #ccc; }
+        .crisis-banner .helplines { margin: 10px 0; }
+        .crisis-banner .helpline-item {
+            display: flex; align-items: center; gap: 10px;
+            padding: 8px 0; border-bottom: 1px solid #f0d080;
+        }
+        body.dark-mode .crisis-banner .helpline-item { border-color: #554400; }
+        .crisis-banner .helpline-item:last-child { border-bottom: none; }
+        .crisis-banner .helpline-name { font-weight: 600; color: #333; min-width: 180px; }
+        body.dark-mode .crisis-banner .helpline-name { color: #eee; }
+        .crisis-banner .helpline-number { color: #e65100; font-weight: bold; font-size: 1rem; }
+
+        /* IPC banner */
+        .ipc-replaced {
+            background: #fdecea;
+            border: 2px solid #e53935;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        body.dark-mode .ipc-replaced { background: #3a0000; }
+        .ipc-replaced h4 { color: #e53935; margin-bottom: 6px; }
+        .ipc-replaced p { color: #555; font-size: 0.9rem; }
+        body.dark-mode .ipc-replaced p { color: #ccc; }
+
+        .bns-replacement {
+            background: #e8f5e9;
+            border: 2px solid #43a047;
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: 10px;
+        }
+        body.dark-mode .bns-replacement { background: #003a00; }
+        .bns-replacement h4 { color: #2e7d32; margin-bottom: 8px; }
+        .bns-replacement p { color: #444; font-size: 0.9rem; line-height: 1.7; }
+        body.dark-mode .bns-replacement p { color: #ccc; }
+
+        .police-btn {
+            margin-top: 12px;
+            padding: 14px;
+            background: #e65100;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .police-btn:hover { background: #bf360c; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <button class="active" onclick="showPage('ai')">AI Assistant</button>
+    <button onclick="showPage('section')">Section Lookup</button>
+    <button onclick="showPage('cases')">Case Library</button>
+    <button onclick="showPage('about')">About</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+</nav>
+
+<header>
+    <h1>Vidhi sethu</h1>
+    <p>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</p>
+</header>
+
+<div class="main-content">
+
+<!-- PAGE 1: AI Assistant -->
+<div class="page active" id="page-ai">
+
+    <!-- Crisis Banner -->
+    <div class="crisis-banner" id="crisisBanner">
+        <h4>🚨 We noticed your message may involve a serious situation</h4>
+        <p>If you or someone you know is in danger or distress, please reach out immediately:</p>
+        <div class="helplines">
+            <div class="helpline-item">
+                <span class="helpline-name">Police Emergency</span>
+                <span class="helpline-number">📞 100</span>
+            </div>
+            <div class="helpline-item">
+                <span class="helpline-name">Women Helpline</span>
+                <span class="helpline-number">📞 1091</span>
+            </div>
+            <div class="helpline-item">
+                <span class="helpline-name">Child Helpline (CHILDLINE)</span>
+                <span class="helpline-number">📞 1098</span>
+            </div>
+            <div class="helpline-item">
+                <span class="helpline-name">Mental Health (iCall)</span>
+                <span class="helpline-number">📞 9152987821</span>
+            </div>
+            <div class="helpline-item">
+                <span class="helpline-name">Vandrevala Foundation</span>
+                <span class="helpline-number">📞 1860-2662-345</span>
+            </div>
+            <div class="helpline-item">
+                <span class="helpline-name">Domestic Violence</span>
+                <span class="helpline-number">📞 181</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="chatBox"></div>
+
+    <div class="send-row">
+        <input type="text" id="aiQuery" placeholder="Ask a legal question..." />
+        <button class="primary" onclick="searchAI()">Send</button>
+    </div>
+
+    <div style="margin-bottom:12px;">
+        <span class="chip" onclick="fillAI('someone attacked me on the street')">Someone attacked me</span>
+        <span class="chip" onclick="fillAI('my neighbour stole my property')">Theft by neighbour</span>
+        <span class="chip" onclick="fillAI('someone is threatening me online')">Online threat</span>
+        <span class="chip" onclick="clearChat()">🗑 Clear Chat</span>
+    </div>
+
+    <div class="loading" id="aiLoading">Analyzing BNS sections...</div>
+    <div id="sectionCards" style="margin-top:12px;"></div>
+
+    <!-- Always visible police button at bottom -->
+    <div style="margin-top: 20px;">
+        <button class="police-btn" onclick="findNearbyPolice()">
+            📍 Find Nearest Police Station
+        </button>
+    </div>
+</div>
+
+<!-- PAGE 2: Section Lookup -->
+<div class="page" id="page-section">
+    <input type="text" id="sectionNumber" placeholder="Enter BNS 303 or IPC 302 or IPC 498A..." />
+    <button class="primary" onclick="lookupSection()">Lookup Section</button>
+    <div class="loading" id="sectionLoading">Fetching section...</div>
+    <div id="sectionResults"></div>
+</div>
+
+<!-- PAGE 3: Case Library -->
+<div class="page" id="page-cases">
+    <div id="caseList"></div>
+</div>
+
+<!-- PAGE 4: About -->
+<div class="page" id="page-about">
+    <div class="card">
+        <h3>About Vidhi sethu</h3>
+        <p>Vidhi sethu is an AI-powered legal assistant designed to help users understand the Bharatiya Nyaya Sanhita (BNS) - India's criminal law code.</p>
+    </div>
+    <div class="card">
+        <h3>What We Do</h3>
+        <p>We provide a comprehensive platform for legal research with three main features:</p>
+        <ul style="margin-left: 20px; margin-top: 12px; color: var(--text-tertiary); line-height: 1.8;">
+            <li><strong>AI Assistant:</strong> Describe your legal situation and get relevant BNS sections with AI-powered explanations</li>
+            <li><strong>Section Lookup:</strong> Search BNS sections or enter old IPC sections to find their BNS equivalent</li>
+            <li><strong>Case Library:</strong> Explore landmark legal cases and judicial precedents</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h3>Our Mission</h3>
+        <p>To democratize legal knowledge and make Indian criminal law accessible to everyone.</p>
+    </div>
+    <div class="card">
+        <h3>Technology</h3>
+        <p>Vidhi sethu uses RAG, Pinecone vector database, Sentence Transformers, Groq LLaMA, and OpenStreetMap for semantic search, AI explanations, and location services.</p>
+    </div>
+    <div class="card">
+        <h3>Disclaimer</h3>
+        <p>Vidhi sethu is for educational purposes only. Always consult a qualified legal professional before making legal decisions.</p>
+    </div>
+</div>
+
+</div>
+
+<script>
+    const API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? "http://127.0.0.1:8000"
+        : "https://your-deployed-api-url.com";
+
+    let chatHistory = [];
+
+    const crisisKeywords = [
+        'suicide', 'suicidal', 'kill myself', 'end my life', 'want to die',
+        'sexual abuse', 'sexually abused', 'rape', 'raped',
+        'physical abuse', 'physically abused', 'domestic violence',
+        'child abuse', 'child molest',
+        'murder', 'being murdered', 'going to kill',
+        'being attacked', 'someone attacking',
+        'help me', 'in danger', 'emergency',
+        'i am being abused', 'being abused'
+    ];
+
+    function checkCrisis(query) {
+        const lower = query.toLowerCase();
+        return crisisKeywords.some(keyword => lower.includes(keyword));
+    }
+    function findNearbyPolice() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                // Use Google Maps search — no API key needed for basic search
+                const url = `https://www.google.com/maps/search/police+station/@${lat},${lng},15z`;
+                window.open(url, '_blank');
+            },
+            () => {
+                // if location denied — open Google Maps general search
+                window.open('https://www.google.com/maps/search/police+station+near+me', '_blank');
+            }
+        );
+    } else {
+        window.open('https://www.google.com/maps/search/police+station', '_blank');
+    }
+}
+
+    function initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+        updateThemeButton();
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateThemeButton();
+    }
+
+    function updateThemeButton() {
+        const btn = document.querySelector('.theme-toggle');
+        btn.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+    }
+
+    initTheme();
+
+    const cases = [
+        {
+            title: "State of Maharashtra vs Mohd. Sajid Husain",
+            section: "BNS Section 103 — Murder",
+            summary: "Accused committed murder during a robbery attempt. Court examined intent and premeditation.",
+            verdict: "Convicted. Life imprisonment awarded.",
+            takeaway: "Murder during robbery is treated with maximum severity under BNS."
+        },
+        {
+            title: "Lalita Kumari vs Govt. of UP",
+            section: "BNS Section 173 — FIR Filing",
+            summary: "Supreme Court held that police must register FIR immediately for cognizable offences.",
+            verdict: "Landmark ruling — FIR registration is mandatory.",
+            takeaway: "Police cannot refuse to file FIR for serious offences."
+        },
+        {
+            title: "Arnesh Kumar vs State of Bihar",
+            section: "BNS Section 35 — Arrest Guidelines",
+            summary: "SC laid down strict guidelines for arrest in cases with punishment under 7 years.",
+            verdict: "Police must justify arrest necessity before making it.",
+            takeaway: "Arrest is not automatic — police must apply mind before arresting."
+        },
+        {
+            title: "State vs Vikas Yadav (Nitish Katara Case)",
+            section: "BNS Section 103 — Murder",
+            summary: "Honour killing case. Accused killed victim for relationship with sister from different caste.",
+            verdict: "Convicted for murder. Life imprisonment.",
+            takeaway: "Honour killings are treated as premeditated murder with no leniency."
+        },
+        {
+            title: "Shafin Jahan vs Asokan KM (Hadiya Case)",
+            section: "BNS Section 137 — Kidnapping",
+            summary: "SC examined whether an adult woman can be kept under parents custody against her will.",
+            verdict: "Adult has full right to choose religion and life partner.",
+            takeaway: "Personal liberty cannot be curtailed even by family under BNS."
+        },
+        {
+            title: "Shreya Singhal vs Union of India",
+            section: "BNS Section 196 — Hate Speech",
+            summary: "SC struck down Section 66A of IT Act for being vague and violating free speech.",
+            verdict: "Section 66A unconstitutional.",
+            takeaway: "Online speech restrictions must be specific and proportionate."
+        },
+        {
+            title: "Vishaka vs State of Rajasthan",
+            section: "BNS Section 75 — Sexual Harassment",
+            summary: "Landmark case that led to guidelines against sexual harassment at workplace.",
+            verdict: "Vishaka guidelines established — now codified as POSH Act.",
+            takeaway: "Employers are responsible for preventing workplace sexual harassment."
+        },
+        {
+            title: "KS Puttaswamy vs Union of India",
+            section: "BNS Section 26 — Right to Privacy",
+            summary: "SC unanimously held that privacy is a fundamental right under the Constitution.",
+            verdict: "Right to privacy is a fundamental right.",
+            takeaway: "Any law violating privacy must pass strict scrutiny."
+        }
+    ];
+
+    function showPage(name) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('nav button:not(.theme-toggle)').forEach(b => b.classList.remove('active'));
+        document.getElementById('page-' + name).classList.add('active');
+        event.target.classList.add('active');
+        if (name === 'cases') renderCases();
+    }
+
+    function fillAI(text) {
+        document.getElementById('aiQuery').value = text;
+        searchAI();
+    }
+
+    async function searchAI() {
+        const query = document.getElementById('aiQuery').value.trim();
+        if (!query) return;
+
+        if (checkCrisis(query)) {
+            document.getElementById('crisisBanner').style.display = 'block';
+        } else {
+            document.getElementById('crisisBanner').style.display = 'none';
+        }
+
+        const pageAi = document.getElementById('page-ai');
+        pageAi.classList.add('expanded');
+
+        chatHistory.push({ role: "user", content: query });
+        appendMessage("user", query);
+        document.getElementById('aiQuery').value = '';
+        document.getElementById('aiLoading').style.display = 'block';
+
+        try {
+            const res = await fetch(`${API}/chat`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ messages: chatHistory })
+            });
+            const data = await res.json();
+
+            chatHistory.push({ role: "assistant", content: data.answer });
+            appendMessage("assistant", data.answer);
+
+            const sectionsHTML = data.relevant_sections.map(s => `
+                <div class="section-card">
+                    <h4>Section ${s.section_number} — ${s.title}</h4>
+                    <p>${s.punishment !== 'Not Applicable' ? s.punishment : 'No direct punishment specified'}</p>
+                </div>
+            `).join('');
+            document.getElementById('sectionCards').innerHTML = sectionsHTML;
+
+        } catch (err) {
+            appendMessage("assistant", "Error connecting to API. Make sure server is running.");
+        } finally {
+            document.getElementById('aiLoading').style.display = 'none';
+        }
+    }
+
+    function appendMessage(role, text) {
+        const chatBox = document.getElementById('chatBox');
+        const div = document.createElement('div');
+        div.className = role === 'user' ? 'msg-user' : 'msg-ai';
+        div.innerText = text;
+        chatBox.appendChild(div);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function clearChat() {
+        chatHistory = [];
+        document.getElementById('chatBox').innerHTML = '';
+        document.getElementById('sectionCards').innerHTML = '';
+        document.getElementById('crisisBanner').style.display = 'none';
+        document.getElementById('page-ai').classList.remove('expanded');
+    }
+
+    async function lookupSection() {
+        const input = document.getElementById('sectionNumber').value.trim();
+        if (!input) return;
+
+        document.getElementById('sectionLoading').style.display = 'block';
+        document.getElementById('sectionResults').innerHTML = '';
+
+        const isIPC = input.toUpperCase().includes('IPC');
+        const number = input.replace(/IPC/gi, '').trim();
+
+        try {
+            if (isIPC) {
+                const res = await fetch(`${API}/ipc/${number}`);
+                const data = await res.json();
+
+                if (data.detail) {
+                    document.getElementById('sectionResults').innerHTML = `
+                        <div class="card">
+                            <p>IPC Section ${number} not found in our mapping.</p>
+                        </div>`;
+                    return;
+                }
+
+                document.getElementById('sectionResults').innerHTML = `
+                    <div class="ipc-replaced">
+                        <h4>⚠️ IPC Section ${number} — ${data.offence}</h4>
+                        <p>${data.note}</p>
+                    </div>
+                    <div class="bns-replacement">
+                        <h4>✅ Replaced by BNS Section ${data.bns_section} — ${data.bns_details?.title || ''}</h4>
+                        <p style="margin-top:8px">${data.bns_details?.description || 'Details not available'}</p>
+                        <p style="margin-top:12px; font-weight:bold;">⚖️ Punishment: ${data.bns_details?.punishment || 'N/A'}</p>
+                    </div>
+                `;
+            } else {
+                const res = await fetch(`${API}/section?number=${number}`);
+                const data = await res.json();
+
+                if (data.detail) {
+                    document.getElementById('sectionResults').innerHTML = '<div class="card"><p>Section not found.</p></div>';
+                    return;
+                }
+
+                document.getElementById('sectionResults').innerHTML = `
+                    <div class="card">
+                        <h3>Section ${data.section_number} — ${data.title}</h3>
+                        <p style="margin-top:12px">${data.description}</p>
+                        <p style="margin-top:16px;">⚖️ Punishment: ${data.punishment}</p>
+                        <p style="margin-top:12px; font-size:0.85rem">Keywords: ${data.keywords}</p>
+                    </div>
+                `;
+            }
+        } catch (err) {
+            document.getElementById('sectionResults').innerHTML = '<div class="card"><p>Error connecting to API.</p></div>';
+        } finally {
+            document.getElementById('sectionLoading').style.display = 'none';
+        }
+    }
+
+    function renderCases() {
+        document.getElementById('caseList').innerHTML = cases.map(c => `
+            <div class="case-card">
+                <h4>${c.title}</h4>
+                <span class="tag">${c.section}</span>
+                <p>${c.summary}</p>
+                <p class="verdict">Verdict: ${c.verdict}</p>
+                <p style="color: var(--text-secondary); margin-top:8px; font-size:0.9rem">${c.takeaway}</p>
+            </div>
+        `).join('');
+    }
+
+    document.getElementById('aiQuery').addEventListener('keypress', e => {
+        if (e.key === 'Enter') searchAI();
+    });
+
+    document.getElementById('sectionNumber').addEventListener('keypress', e => {
+        if (e.key === 'Enter') lookupSection();
+    });
+</script>
+
+</body>
+</html>
