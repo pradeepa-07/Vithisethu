@@ -636,42 +636,61 @@
         try {
             if (isIPC) {
                 const res = await fetch(`${API}/ipc/${number}`);
-                const data = await res.json();
-
-                if (data.detail) {
+                
+                if (!res.ok) {
                     document.getElementById('sectionResults').innerHTML = `
                         <div class="card">
-                            <p>IPC Section ${number} not found in our mapping.</p>
+                            <p>❌ IPC Section ${number} not found in our mapping database.</p>
                         </div>`;
                     return;
                 }
 
-                document.getElementById('sectionResults').innerHTML = `
-                    <div class="ipc-replaced">
-                        <h4>⚠️ IPC Section ${number} — ${data.offence}</h4>
-                        <p>${data.note}</p>
-                    </div>
-                    <div class="bns-replacement">
-                        <h4>✅ Replaced by BNS Section ${data.bns_section} — ${data.bns_details?.title || ''}</h4>
-                        <p style="margin-top:8px">${data.bns_details?.description || 'Details not available'}</p>
-                        <p style="margin-top:12px; font-weight:bold;">⚖️ Punishment: ${data.bns_details?.punishment || 'N/A'}</p>
-                    </div>
-                `;
-            } else {
-                const res = await fetch(`${API}/section?number=${number}`);
                 const data = await res.json();
 
-                if (data.detail) {
+                let resultHTML = `
+                    <div class="ipc-replaced">
+                        <h4>⚠️ IPC Section ${data.ipc_section}</h4>
+                        <p style="margin-top:8px; font-weight:600; color:var(--accent);">${data.effective_date_message}</p>
+                        <p style="margin-top:12px; color:var(--text-tertiary);">${data.subject_offence || 'Details not available'}</p>
+                        ${data.key_change_notes ? `<p style="margin-top:8px; color:var(--text-secondary); font-style:italic;">Change Notes: ${data.key_change_notes}</p>` : ''}
+                    </div>
+                `;
+
+                if (data.bns_details) {
+                    resultHTML += `
+                        <div class="bns-replacement">
+                            <h4>✅ BNS Section ${data.bns_details.section_number} — ${data.bns_details.title}</h4>
+                            <p style="margin-top:8px; color:var(--text-tertiary);">${data.bns_details.description}</p>
+                            <p style="margin-top:12px; font-weight:bold;">⚖️ Punishment: ${data.bns_details.punishment}</p>
+                            ${data.bns_details.keywords && data.bns_details.keywords !== 'nan' ? `<p style="margin-top:12px; font-size:0.85rem; color:var(--text-secondary);">Keywords: ${data.bns_details.keywords}</p>` : ''}
+                        </div>
+                    `;
+                } else {
+                    resultHTML += `
+                        <div class="bns-replacement">
+                            <h4>✅ BNS Section ${data.bns_section}</h4>
+                            <p style="margin-top:8px; color:var(--text-tertiary);">BNS section details not found in database.</p>
+                        </div>
+                    `;
+                }
+
+                document.getElementById('sectionResults').innerHTML = resultHTML;
+            } else {
+                const res = await fetch(`${API}/section?number=${number}`);
+                
+                if (!res.ok) {
                     document.getElementById('sectionResults').innerHTML = '<div class="card"><p>Section not found.</p></div>';
                     return;
                 }
+
+                const data = await res.json();
 
                 document.getElementById('sectionResults').innerHTML = `
                     <div class="card">
                         <h3>Section ${data.section_number} — ${data.title}</h3>
                         <p style="margin-top:12px">${data.description}</p>
                         <p style="margin-top:16px;">⚖️ Punishment: ${data.punishment}</p>
-                        <p style="margin-top:12px; font-size:0.85rem">Keywords: ${data.keywords}</p>
+                        ${data.keywords && data.keywords !== 'nan' ? `<p style="margin-top:12px; font-size:0.85rem">Keywords: ${data.keywords}</p>` : ''}
                     </div>
                 `;
             }

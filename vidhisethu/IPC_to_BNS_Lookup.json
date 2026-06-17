@@ -1,0 +1,3243 @@
+{
+  "title": "IPC to BNS Section Lookup",
+  "description": "Mapping of Indian Penal Code (IPC) sections to Bharatiya Nyaya Sanhita (BNS) sections effective 1 July 2024",
+  "source": "NCRB Section Table & Comparison Summary (CAPT Bhopal)",
+  "effective_date": "2024-07-01",
+  "total_entries": 546,
+  "data": [
+    {
+      "ipc_section": "1",
+      "bns_section": "1(1)",
+      "subject_offence": "Short title, commencement and application",
+      "key_change_notes": "Restructured into subsections"
+    },
+    {
+      "ipc_section": "2",
+      "bns_section": "1(3)",
+      "subject_offence": "Punishment of offences committed within India",
+      "key_change_notes": "'Code' replaced with 'Sanhita'"
+    },
+    {
+      "ipc_section": "3",
+      "bns_section": "1(4)",
+      "subject_offence": "Punishment of offences committed beyond India",
+      "key_change_notes": "Minor changes"
+    },
+    {
+      "ipc_section": "4",
+      "bns_section": "1(5)",
+      "subject_offence": "Extension to extra-territorial offences",
+      "key_change_notes": "'Uganda' replaced with 'any place outside India'"
+    },
+    {
+      "ipc_section": "5",
+      "bns_section": "1(6)",
+      "subject_offence": "Certain laws not affected",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "6",
+      "bns_section": "3(1)",
+      "subject_offence": "Definitions subject to exceptions",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "7",
+      "bns_section": "3(2)",
+      "subject_offence": "Sense of expression once explained",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "8",
+      "bns_section": "2(10)",
+      "subject_offence": "Gender",
+      "key_change_notes": "Transgender added"
+    },
+    {
+      "ipc_section": "9",
+      "bns_section": "2(22)",
+      "subject_offence": "Number",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "10",
+      "bns_section": "2(19)/2(35)",
+      "subject_offence": "Man/Woman",
+      "key_change_notes": "Split into two subsections"
+    },
+    {
+      "ipc_section": "11",
+      "bns_section": "2(26)",
+      "subject_offence": "Person",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "12",
+      "bns_section": "2(27)",
+      "subject_offence": "Public",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "17",
+      "bns_section": "2(12)",
+      "subject_offence": "Government",
+      "key_change_notes": "'Government of a State' replaced by 'State Government'"
+    },
+    {
+      "ipc_section": "19",
+      "bns_section": "2(16)",
+      "subject_offence": "Judge",
+      "key_change_notes": "Simplified definition"
+    },
+    {
+      "ipc_section": "20",
+      "bns_section": "2(5)",
+      "subject_offence": "Court",
+      "key_change_notes": "Illustration excluded; 'Court of Justice' → 'Court'"
+    },
+    {
+      "ipc_section": "21",
+      "bns_section": "2(28)",
+      "subject_offence": "Public servant",
+      "key_change_notes": "'Military, Naval' → 'Army, and Navy'; 'Juryman' excluded"
+    },
+    {
+      "ipc_section": "22",
+      "bns_section": "2(21)",
+      "subject_offence": "Movable property",
+      "key_change_notes": "'Corporeal' removed, scope expanded"
+    },
+    {
+      "ipc_section": "23",
+      "bns_section": "2(36)/2(37)/2(38)",
+      "subject_offence": "Wrongful gain/loss",
+      "key_change_notes": "'is' replaced by 'means'"
+    },
+    {
+      "ipc_section": "24",
+      "bns_section": "2(7)",
+      "subject_offence": "Dishonestly",
+      "key_change_notes": "Minor phraseology changes"
+    },
+    {
+      "ipc_section": "25",
+      "bns_section": "2(9)",
+      "subject_offence": "Fraudulently",
+      "key_change_notes": "Phraseology changed, essence same"
+    },
+    {
+      "ipc_section": "26",
+      "bns_section": "2(29)",
+      "subject_offence": "Reason to believe",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "27",
+      "bns_section": "3(3)",
+      "subject_offence": "Property in possession of wife/clerk/servant",
+      "key_change_notes": "'Wife' replaced by 'Spouse'"
+    },
+    {
+      "ipc_section": "28",
+      "bns_section": "2(4)",
+      "subject_offence": "Counterfeit",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "29",
+      "bns_section": "2(8)",
+      "subject_offence": "Document",
+      "key_change_notes": "Electronic and digital records added"
+    },
+    {
+      "ipc_section": "30",
+      "bns_section": "2(31)",
+      "subject_offence": "Valuable security",
+      "key_change_notes": "'Denotes' → 'means'"
+    },
+    {
+      "ipc_section": "31",
+      "bns_section": "2(34)",
+      "subject_offence": "A will",
+      "key_change_notes": "'A will' → 'Will'"
+    },
+    {
+      "ipc_section": "32",
+      "bns_section": "3(4)",
+      "subject_offence": "Words referring to acts include illegal omissions",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "34",
+      "bns_section": "3(5)",
+      "subject_offence": "Acts done in furtherance of common intention",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "35",
+      "bns_section": "3(6)",
+      "subject_offence": "Criminal knowledge or intention",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "36",
+      "bns_section": "3(7)",
+      "subject_offence": "Effect partly by act and partly by omission",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "37",
+      "bns_section": "3(8)",
+      "subject_offence": "Co-operation by doing one of several acts",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "38",
+      "bns_section": "3(9)",
+      "subject_offence": "Persons concerned in criminal act",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "39",
+      "bns_section": "2(33)",
+      "subject_offence": "Voluntarily",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "40",
+      "bns_section": "2(24)",
+      "subject_offence": "Offence",
+      "key_change_notes": "'Denotes' → 'means'"
+    },
+    {
+      "ipc_section": "41",
+      "bns_section": "2(30)",
+      "subject_offence": "Special law",
+      "key_change_notes": "'is' → 'means'"
+    },
+    {
+      "ipc_section": "42",
+      "bns_section": "2(18)",
+      "subject_offence": "Local law",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "43",
+      "bns_section": "2(15)",
+      "subject_offence": "Illegal and legally bound to do",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "44",
+      "bns_section": "2(14)",
+      "subject_offence": "Injury",
+      "key_change_notes": "'Denotes' → 'means'"
+    },
+    {
+      "ipc_section": "45",
+      "bns_section": "2(17)",
+      "subject_offence": "Life",
+      "key_change_notes": "'Denotes' → 'means'"
+    },
+    {
+      "ipc_section": "46",
+      "bns_section": "2(6)",
+      "subject_offence": "Death",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "47",
+      "bns_section": "2(2)",
+      "subject_offence": "Animal",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "48",
+      "bns_section": "2(32)",
+      "subject_offence": "Vessel",
+      "key_change_notes": "'Denotes' → 'means'"
+    },
+    {
+      "ipc_section": "49",
+      "bns_section": "2(20)",
+      "subject_offence": "Month and year",
+      "key_change_notes": "'British calendar' → 'Gregorian calendar'"
+    },
+    {
+      "ipc_section": "51",
+      "bns_section": "2(23)",
+      "subject_offence": "Oath",
+      "key_change_notes": "'Court of Justice' → 'Court'"
+    },
+    {
+      "ipc_section": "52",
+      "bns_section": "2(11)",
+      "subject_offence": "Good faith",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "52A",
+      "bns_section": "2(13)",
+      "subject_offence": "Harbour",
+      "key_change_notes": "Some words excluded"
+    },
+    {
+      "ipc_section": "53",
+      "bns_section": "4",
+      "subject_offence": "Punishments",
+      "key_change_notes": "Community service added"
+    },
+    {
+      "ipc_section": "54",
+      "bns_section": "5(a)",
+      "subject_offence": "Commutation of sentence of death",
+      "key_change_notes": "Cross-reference to BNSS added"
+    },
+    {
+      "ipc_section": "55",
+      "bns_section": "5(b)",
+      "subject_offence": "Commutation of sentence of life imprisonment",
+      "key_change_notes": "Cross-reference to BNSS added"
+    },
+    {
+      "ipc_section": "55A",
+      "bns_section": "Explanation to 5",
+      "subject_offence": "Commutation clarification",
+      "key_change_notes": "Heading dropped"
+    },
+    {
+      "ipc_section": "57",
+      "bns_section": "6",
+      "subject_offence": "Fractions of terms of punishment",
+      "key_change_notes": "'Unless otherwise provided' added"
+    },
+    {
+      "ipc_section": "60",
+      "bns_section": "7",
+      "subject_offence": "Sentence rigorous or simple",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "63",
+      "bns_section": "8(1)",
+      "subject_offence": "Amount of fine",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "64",
+      "bns_section": "8(2)",
+      "subject_offence": "Sentence for non-payment of fine",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "65",
+      "bns_section": "8(3)",
+      "subject_offence": "Limit to imprisonment for non-payment of fine",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "66",
+      "bns_section": "8(4)",
+      "subject_offence": "Description of imprisonment for non-payment",
+      "key_change_notes": "'Or in default of community service' added"
+    },
+    {
+      "ipc_section": "67",
+      "bns_section": "8(5)",
+      "subject_offence": "Imprisonment when only fine punishable",
+      "key_change_notes": "Community service added; fine increased"
+    },
+    {
+      "ipc_section": "68",
+      "bns_section": "8(6)",
+      "subject_offence": "Imprisonment to terminate on payment of fine",
+      "key_change_notes": "Merged with IPC 69"
+    },
+    {
+      "ipc_section": "69",
+      "bns_section": "8(6)",
+      "subject_offence": "Termination on proportional payment",
+      "key_change_notes": "Merged with IPC 68"
+    },
+    {
+      "ipc_section": "70",
+      "bns_section": "8(7)",
+      "subject_offence": "Fine leviable within six years",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "71",
+      "bns_section": "9",
+      "subject_offence": "Limit of punishment for several offences",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "72",
+      "bns_section": "10",
+      "subject_offence": "Punishment when doubtful which offence",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "73",
+      "bns_section": "11",
+      "subject_offence": "Solitary confinement",
+      "key_change_notes": "'That is to say' → 'namely'"
+    },
+    {
+      "ipc_section": "74",
+      "bns_section": "12",
+      "subject_offence": "Limit of solitary confinement",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "75",
+      "bns_section": "13",
+      "subject_offence": "Enhanced punishment after previous conviction",
+      "key_change_notes": "Chapter numbers dropped"
+    },
+    {
+      "ipc_section": "76",
+      "bns_section": "14",
+      "subject_offence": "Act done bound by law",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "77",
+      "bns_section": "15",
+      "subject_offence": "Act of Judge when acting judicially",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "78",
+      "bns_section": "16",
+      "subject_offence": "Act pursuant to court order",
+      "key_change_notes": "'Court of Justice' → 'Court'"
+    },
+    {
+      "ipc_section": "79",
+      "bns_section": "17",
+      "subject_offence": "Act done justified by law",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "80",
+      "bns_section": "18",
+      "subject_offence": "Accident in doing a lawful act",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "81",
+      "bns_section": "19",
+      "subject_offence": "Act to prevent other harm",
+      "key_change_notes": "'Steam' excluded in illustration"
+    },
+    {
+      "ipc_section": "82",
+      "bns_section": "20",
+      "subject_offence": "Act of child under seven",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "83",
+      "bns_section": "21",
+      "subject_offence": "Act of child above seven under twelve",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "84",
+      "bns_section": "22",
+      "subject_offence": "Act of person of unsound mind",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "85",
+      "bns_section": "23",
+      "subject_offence": "Intoxication caused against will",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "86",
+      "bns_section": "24",
+      "subject_offence": "Offence committed when intoxicated",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "87",
+      "bns_section": "25",
+      "subject_offence": "Act done by consent",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "88",
+      "bns_section": "26",
+      "subject_offence": "Act in good faith for person's benefit",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "89",
+      "bns_section": "27",
+      "subject_offence": "Act for benefit of child by guardian",
+      "key_change_notes": "'Insane person' → 'person of unsound mind'"
+    },
+    {
+      "ipc_section": "90",
+      "bns_section": "28",
+      "subject_offence": "Consent under fear or misconception",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "91",
+      "bns_section": "29",
+      "subject_offence": "Exclusion of acts that are offences independently",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "92",
+      "bns_section": "30",
+      "subject_offence": "Act in good faith without consent",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "93",
+      "bns_section": "31",
+      "subject_offence": "Communication in good faith",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "94",
+      "bns_section": "32",
+      "subject_offence": "Act compelled by threats",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "95",
+      "bns_section": "33",
+      "subject_offence": "Act causing slight harm",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "96",
+      "bns_section": "34",
+      "subject_offence": "Things done in private defence",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "97",
+      "bns_section": "35",
+      "subject_offence": "Right of private defence of body and property",
+      "key_change_notes": "Paragraphs rephrased as clauses"
+    },
+    {
+      "ipc_section": "98",
+      "bns_section": "36",
+      "subject_offence": "Private defence against unsound mind person",
+      "key_change_notes": "'Under influence of madness' → 'unsound mind'"
+    },
+    {
+      "ipc_section": "99",
+      "bns_section": "37",
+      "subject_offence": "Acts against which there is no right of private defence",
+      "key_change_notes": "Reframed into two subsections"
+    },
+    {
+      "ipc_section": "100",
+      "bns_section": "38",
+      "subject_offence": "Private defence of body extending to death",
+      "key_change_notes": "Ordinals replaced by (a)-(g)"
+    },
+    {
+      "ipc_section": "101",
+      "bns_section": "39",
+      "subject_offence": "Right extends to causing any harm other than death",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "102",
+      "bns_section": "40",
+      "subject_offence": "Commencement of right of private defence of body",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "103",
+      "bns_section": "41",
+      "subject_offence": "Private defence of property extending to death",
+      "key_change_notes": "'By night' → 'after sunset and before sunrise'"
+    },
+    {
+      "ipc_section": "104",
+      "bns_section": "42",
+      "subject_offence": "Right extends to harm other than death (property)",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "105",
+      "bns_section": "43",
+      "subject_offence": "Commencement of right of private defence of property",
+      "key_change_notes": "'By night' → 'after sunset and before sunrise'"
+    },
+    {
+      "ipc_section": "106",
+      "bns_section": "44",
+      "subject_offence": "Private defence against deadly assault",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "107",
+      "bns_section": "45",
+      "subject_offence": "Abetment of a thing",
+      "key_change_notes": "'Court of justice' → 'Court'"
+    },
+    {
+      "ipc_section": "108",
+      "bns_section": "46",
+      "subject_offence": "Abettor",
+      "key_change_notes": "'Lunatic' → 'person of unsound mind'"
+    },
+    {
+      "ipc_section": "108A",
+      "bns_section": "47",
+      "subject_offence": "Abetment in India of offences outside India",
+      "key_change_notes": "'Goa' → 'country X' in illustration"
+    },
+    {
+      "ipc_section": "109",
+      "bns_section": "49",
+      "subject_offence": "Punishment of abetment if act committed",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "110",
+      "bns_section": "50",
+      "subject_offence": "Punishment of abetment with different intention",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "111",
+      "bns_section": "51",
+      "subject_offence": "Liability of abettor when different act done",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "112",
+      "bns_section": "52",
+      "subject_offence": "Abettor liable to cumulative punishment",
+      "key_change_notes": "'Last preceding section' → 'section 51'"
+    },
+    {
+      "ipc_section": "113",
+      "bns_section": "53",
+      "subject_offence": "Abettor liability for different effect",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "114",
+      "bns_section": "54",
+      "subject_offence": "Abettor present when offence committed",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "115",
+      "bns_section": "55",
+      "subject_offence": "Abetment punishable with death or life",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "116",
+      "bns_section": "56",
+      "subject_offence": "Abetment punishable with imprisonment",
+      "key_change_notes": "Minor changes to heading"
+    },
+    {
+      "ipc_section": "117",
+      "bns_section": "57",
+      "subject_offence": "Abetting commission by public or more than ten",
+      "key_change_notes": "Imprisonment increased from 3 to 7 years"
+    },
+    {
+      "ipc_section": "118",
+      "bns_section": "58",
+      "subject_offence": "Concealing design to commit offence (death/life)",
+      "key_change_notes": "Minor changes"
+    },
+    {
+      "ipc_section": "119",
+      "bns_section": "59",
+      "subject_offence": "Public servant concealing design",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "120",
+      "bns_section": "60",
+      "subject_offence": "Concealing design (imprisonment)",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "120A",
+      "bns_section": "61(1)",
+      "subject_offence": "Definition of criminal conspiracy",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "120B",
+      "bns_section": "61(2)",
+      "subject_offence": "Punishment of criminal conspiracy",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "121",
+      "bns_section": "147",
+      "subject_offence": "Waging war against Government of India",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "121A",
+      "bns_section": "148",
+      "subject_offence": "Conspiracy to wage war",
+      "key_change_notes": "'And beyond' added"
+    },
+    {
+      "ipc_section": "122",
+      "bns_section": "149",
+      "subject_offence": "Collecting arms to wage war",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "123",
+      "bns_section": "150",
+      "subject_offence": "Concealing intent to wage war",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "124",
+      "bns_section": "151",
+      "subject_offence": "Assaulting President/Governor etc.",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "124A",
+      "bns_section": "152",
+      "subject_offence": "Sedition",
+      "key_change_notes": "Replaced by BNS S.152 – 'Acts Endangering Sovereignty, Unity and Integrity of India'; word 'sedition' dropped; scope broadened; max punishment increased from 3 yrs to 7 yrs / life imprisonment"
+    },
+    {
+      "ipc_section": "125",
+      "bns_section": "153",
+      "subject_offence": "Waging war against friendly foreign state",
+      "key_change_notes": "'Asiatic power' → 'Government of any foreign State at peace'"
+    },
+    {
+      "ipc_section": "126",
+      "bns_section": "154",
+      "subject_offence": "Depredation on territories of friendly state",
+      "key_change_notes": "Updated language"
+    },
+    {
+      "ipc_section": "127",
+      "bns_section": "155",
+      "subject_offence": "Receiving property taken by war",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "128",
+      "bns_section": "156",
+      "subject_offence": "Public servant allowing prisoner to escape",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "129",
+      "bns_section": "157",
+      "subject_offence": "Public servant negligently allowing escape",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "130",
+      "bns_section": "158",
+      "subject_offence": "Aiding escape of prisoner",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "131",
+      "bns_section": "159",
+      "subject_offence": "Abetting mutiny",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "132",
+      "bns_section": "160",
+      "subject_offence": "Abetment of mutiny if mutiny committed",
+      "key_change_notes": "Imprisonment increased from 3 to 10 years"
+    },
+    {
+      "ipc_section": "133",
+      "bns_section": "161",
+      "subject_offence": "Abetment of assault by soldier/sailor/airman",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "134",
+      "bns_section": "162",
+      "subject_offence": "Abetment of assault if assault committed",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "135",
+      "bns_section": "163",
+      "subject_offence": "Abetment of desertion",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "136",
+      "bns_section": "164",
+      "subject_offence": "Harbouring deserter",
+      "key_change_notes": "'Wife' → 'spouse' (gender neutral)"
+    },
+    {
+      "ipc_section": "137",
+      "bns_section": "165",
+      "subject_offence": "Deserter concealed through negligence of master",
+      "key_change_notes": "Fine increased from Rs 500 to Rs 3000"
+    },
+    {
+      "ipc_section": "138",
+      "bns_section": "166",
+      "subject_offence": "Abetment of insubordination",
+      "key_change_notes": "Imprisonment increased from 6 months to 2 years"
+    },
+    {
+      "ipc_section": "139",
+      "bns_section": "167",
+      "subject_offence": "Persons subject to certain Acts",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "140",
+      "bns_section": "168",
+      "subject_offence": "Wearing garb of soldier/sailor/airman",
+      "key_change_notes": "'Military' → 'Army'; fine increased"
+    },
+    {
+      "ipc_section": "141",
+      "bns_section": "189(1)",
+      "subject_offence": "Unlawful assembly",
+      "key_change_notes": "Ordinals replaced by (a)-(e)"
+    },
+    {
+      "ipc_section": "142",
+      "bns_section": "189(2)",
+      "subject_offence": "Being member of unlawful assembly",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "143",
+      "bns_section": "189(2)",
+      "subject_offence": "Punishment for unlawful assembly member",
+      "key_change_notes": "Merged into 189(2)"
+    },
+    {
+      "ipc_section": "144",
+      "bns_section": "189(4)",
+      "subject_offence": "Joining unlawful assembly armed with deadly weapon",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "145",
+      "bns_section": "189(3)",
+      "subject_offence": "Joining/continuing in unlawful assembly",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "146",
+      "bns_section": "191(1)",
+      "subject_offence": "Rioting – offence defined",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "147",
+      "bns_section": "191(2)",
+      "subject_offence": "Punishment for rioting",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "148",
+      "bns_section": "191(3)",
+      "subject_offence": "Rioting armed with deadly weapon",
+      "key_change_notes": "Imprisonment increased from 3 to 5 years"
+    },
+    {
+      "ipc_section": "149",
+      "bns_section": "190",
+      "subject_offence": "Every member of unlawful assembly guilty",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "150",
+      "bns_section": "189(6)",
+      "subject_offence": "Hiring persons to join unlawful assembly",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "151",
+      "bns_section": "189(5)",
+      "subject_offence": "Knowingly joining assembly after commanded to disperse",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "152",
+      "bns_section": "195",
+      "subject_offence": "Assaulting/obstructing public servant in riot",
+      "key_change_notes": "Split into two subsections; fine minimum Rs 25,000"
+    },
+    {
+      "ipc_section": "153",
+      "bns_section": "192",
+      "subject_offence": "Wantonly giving provocation to cause riot",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "153A",
+      "bns_section": "196",
+      "subject_offence": "Promoting enmity between groups",
+      "key_change_notes": "Electronic communication added as mode"
+    },
+    {
+      "ipc_section": "153B",
+      "bns_section": "197",
+      "subject_offence": "Imputations prejudicial to national integration",
+      "key_change_notes": "Electronic communication added"
+    },
+    {
+      "ipc_section": "154",
+      "bns_section": "193(1)",
+      "subject_offence": "Owner/occupier liability for unlawful assembly",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "155",
+      "bns_section": "193(2)",
+      "subject_offence": "Liability of person benefiting from riot",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "156",
+      "bns_section": "193(3)",
+      "subject_offence": "Liability of agent of owner for riot",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "157",
+      "bns_section": "189(7)",
+      "subject_offence": "Harbouring persons hired for unlawful assembly",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "159",
+      "bns_section": "194(1)",
+      "subject_offence": "Affray defined",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "160",
+      "bns_section": "194(2)",
+      "subject_offence": "Punishment for affray",
+      "key_change_notes": "Fine increased from Rs 100 to Rs 1000"
+    },
+    {
+      "ipc_section": "166",
+      "bns_section": "198",
+      "subject_offence": "Public servant disobeying law to cause injury",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "166A",
+      "bns_section": "199",
+      "subject_offence": "Public servant disobeying direction under law",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "166B",
+      "bns_section": "200",
+      "subject_offence": "Punishment for non-treatment of victim",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "167",
+      "bns_section": "201",
+      "subject_offence": "Public servant framing incorrect document",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "168",
+      "bns_section": "202",
+      "subject_offence": "Public servant unlawfully engaging in trade",
+      "key_change_notes": "Community service added"
+    },
+    {
+      "ipc_section": "169",
+      "bns_section": "203",
+      "subject_offence": "Public servant unlawfully buying/bidding property",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "170",
+      "bns_section": "204",
+      "subject_offence": "Personating a public servant",
+      "key_change_notes": "Mandatory minimum 6 months; max increased to 3 years"
+    },
+    {
+      "ipc_section": "171",
+      "bns_section": "205",
+      "subject_offence": "Wearing garb of public servant with fraud intent",
+      "key_change_notes": "Fine increased from Rs 200 to Rs 5000"
+    },
+    {
+      "ipc_section": "171A",
+      "bns_section": "169",
+      "subject_offence": "Candidate, electoral right defined",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "171B",
+      "bns_section": "170",
+      "subject_offence": "Bribery",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "171C",
+      "bns_section": "171",
+      "subject_offence": "Undue influence at elections",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "171D",
+      "bns_section": "172",
+      "subject_offence": "Personation at elections",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "171E",
+      "bns_section": "173",
+      "subject_offence": "Punishment for bribery",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "171F",
+      "bns_section": "174",
+      "subject_offence": "Punishment for undue influence or personation",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "171G",
+      "bns_section": "175",
+      "subject_offence": "False statement in connection with election",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "171H",
+      "bns_section": "176",
+      "subject_offence": "Illegal payments in connection with election",
+      "key_change_notes": "Fine increased from Rs 500 to Rs 10,000"
+    },
+    {
+      "ipc_section": "171-I",
+      "bns_section": "177",
+      "subject_offence": "Failure to keep election accounts",
+      "key_change_notes": "Fine increased from Rs 500 to Rs 5000"
+    },
+    {
+      "ipc_section": "172",
+      "bns_section": "206",
+      "subject_offence": "Absconding to avoid service of summons",
+      "key_change_notes": "Fine increased; 'Court of Justice' → 'Court'"
+    },
+    {
+      "ipc_section": "173",
+      "bns_section": "207",
+      "subject_offence": "Preventing service of summons",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "174",
+      "bns_section": "208",
+      "subject_offence": "Non-attendance in obedience to public servant order",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "174A",
+      "bns_section": "209",
+      "subject_offence": "Non-appearance in response to proclamation",
+      "key_change_notes": "Community service added"
+    },
+    {
+      "ipc_section": "175",
+      "bns_section": "210",
+      "subject_offence": "Omission to produce document to public servant",
+      "key_change_notes": "Fine increased; 'Court of Justice' → 'Court'"
+    },
+    {
+      "ipc_section": "176",
+      "bns_section": "211",
+      "subject_offence": "Omission to give notice/information to public servant",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "177",
+      "bns_section": "212",
+      "subject_offence": "Furnishing false information",
+      "key_change_notes": "Fine increased from Rs 1000 to Rs 5000"
+    },
+    {
+      "ipc_section": "178",
+      "bns_section": "213",
+      "subject_offence": "Refusing oath or affirmation",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "179",
+      "bns_section": "214",
+      "subject_offence": "Refusing to answer public servant",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "180",
+      "bns_section": "215",
+      "subject_offence": "Refusing to sign statement",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "181",
+      "bns_section": "216",
+      "subject_offence": "False statement on oath to public servant",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "182",
+      "bns_section": "217",
+      "subject_offence": "False information to cause public servant to injure another",
+      "key_change_notes": "Imprisonment increased; fine increased"
+    },
+    {
+      "ipc_section": "183",
+      "bns_section": "218",
+      "subject_offence": "Resistance to taking property by public servant",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "184",
+      "bns_section": "219",
+      "subject_offence": "Obstructing sale of property by public servant",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "185",
+      "bns_section": "220",
+      "subject_offence": "Illegal purchase/bid at public servant's sale",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "186",
+      "bns_section": "221",
+      "subject_offence": "Obstructing public servant in discharge of duty",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "187",
+      "bns_section": "222",
+      "subject_offence": "Omission to assist public servant",
+      "key_change_notes": "Reorganized; fine increased"
+    },
+    {
+      "ipc_section": "188",
+      "bns_section": "223",
+      "subject_offence": "Disobedience to order of public servant",
+      "key_change_notes": "Reorganized; imprisonment and fine increased"
+    },
+    {
+      "ipc_section": "189",
+      "bns_section": "224",
+      "subject_offence": "Threat of injury to public servant",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "190",
+      "bns_section": "225",
+      "subject_offence": "Threat of injury to induce person to refrain",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "191",
+      "bns_section": "227",
+      "subject_offence": "Giving false evidence",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "192",
+      "bns_section": "228",
+      "subject_offence": "Fabricating false evidence",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "193",
+      "bns_section": "229",
+      "subject_offence": "Punishment for false evidence",
+      "key_change_notes": "Fine defined in subsections"
+    },
+    {
+      "ipc_section": "194",
+      "bns_section": "230",
+      "subject_offence": "False evidence to procure conviction of capital offence",
+      "key_change_notes": "Fine defined up to Rs 50,000"
+    },
+    {
+      "ipc_section": "195",
+      "bns_section": "231",
+      "subject_offence": "False evidence to procure conviction (life imprisonment)",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "195A",
+      "bns_section": "232",
+      "subject_offence": "Threatening any person to give false evidence",
+      "key_change_notes": "Reorganized into sub-sections"
+    },
+    {
+      "ipc_section": "196",
+      "bns_section": "233",
+      "subject_offence": "Using evidence known to be false",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "197",
+      "bns_section": "234",
+      "subject_offence": "Issuing or signing false certificate",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "198",
+      "bns_section": "235",
+      "subject_offence": "Using as true a certificate known to be false",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "199",
+      "bns_section": "236",
+      "subject_offence": "False statement in declaration receivable as evidence",
+      "key_change_notes": "'Court of Justice' → 'Court'"
+    },
+    {
+      "ipc_section": "200",
+      "bns_section": "237",
+      "subject_offence": "Using as true such declaration knowing it false",
+      "key_change_notes": "Minor change in explanation"
+    },
+    {
+      "ipc_section": "201",
+      "bns_section": "238",
+      "subject_offence": "Causing disappearance of evidence or giving false info",
+      "key_change_notes": "Clauses reorganized"
+    },
+    {
+      "ipc_section": "202",
+      "bns_section": "239",
+      "subject_offence": "Omission to give information of offence",
+      "key_change_notes": "Fine defined as Rs 5000"
+    },
+    {
+      "ipc_section": "203",
+      "bns_section": "240",
+      "subject_offence": "Giving false information respecting an offence",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "204",
+      "bns_section": "241",
+      "subject_offence": "Destruction of document to prevent production as evidence",
+      "key_change_notes": "Imprisonment increased; fine defined"
+    },
+    {
+      "ipc_section": "205",
+      "bns_section": "242",
+      "subject_offence": "False personation for purpose of suit/prosecution",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "206",
+      "bns_section": "243",
+      "subject_offence": "Fraudulent removal of property to prevent seizure",
+      "key_change_notes": "Imprisonment and fine increased"
+    },
+    {
+      "ipc_section": "207",
+      "bns_section": "244",
+      "subject_offence": "Fraudulent claim to property to prevent seizure",
+      "key_change_notes": "'Court of Justice' → 'Court'"
+    },
+    {
+      "ipc_section": "208",
+      "bns_section": "245",
+      "subject_offence": "Fraudulently suffering decree for sum not due",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "209",
+      "bns_section": "246",
+      "subject_offence": "Dishonestly making false claim in court",
+      "key_change_notes": "'Court of Justice' → 'Court'"
+    },
+    {
+      "ipc_section": "210",
+      "bns_section": "247",
+      "subject_offence": "Fraudulently obtaining decree for sum not due",
+      "key_change_notes": "Reorganized"
+    },
+    {
+      "ipc_section": "211",
+      "bns_section": "248",
+      "subject_offence": "False charge of offence made with intent to injure",
+      "key_change_notes": "Imprisonment increased to 5/10 years; fine up to Rs 2 lakh"
+    },
+    {
+      "ipc_section": "212",
+      "bns_section": "249",
+      "subject_offence": "Harbouring offender",
+      "key_change_notes": "Reorganized; 'husband or wife' → 'spouse'"
+    },
+    {
+      "ipc_section": "213",
+      "bns_section": "250",
+      "subject_offence": "Taking gift to screen offender from punishment",
+      "key_change_notes": "Reorganized"
+    },
+    {
+      "ipc_section": "214",
+      "bns_section": "251",
+      "subject_offence": "Offering gift to screen offender",
+      "key_change_notes": "Reorganized"
+    },
+    {
+      "ipc_section": "215",
+      "bns_section": "252",
+      "subject_offence": "Taking gift to help recover stolen property",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "216",
+      "bns_section": "253",
+      "subject_offence": "Harbouring offender who escaped from custody",
+      "key_change_notes": "Reorganized; 'husband or wife' → 'spouse'"
+    },
+    {
+      "ipc_section": "216A",
+      "bns_section": "254",
+      "subject_offence": "Penalty for harbouring robbers or dacoits",
+      "key_change_notes": "'Husband or wife' → 'spouse'"
+    },
+    {
+      "ipc_section": "217",
+      "bns_section": "255",
+      "subject_offence": "Public servant disobeying direction to save person",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "218",
+      "bns_section": "256",
+      "subject_offence": "Public servant framing incorrect record to save person",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "219",
+      "bns_section": "257",
+      "subject_offence": "Public servant corruptly making report in judicial proceedings",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "220",
+      "bns_section": "258",
+      "subject_offence": "Commitment for trial by person acting contrary to law",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "221",
+      "bns_section": "259",
+      "subject_offence": "Omission to apprehend by public servant",
+      "key_change_notes": "Reorganized"
+    },
+    {
+      "ipc_section": "222",
+      "bns_section": "260",
+      "subject_offence": "Omission to apprehend person under sentence",
+      "key_change_notes": "Reorganized"
+    },
+    {
+      "ipc_section": "223",
+      "bns_section": "261",
+      "subject_offence": "Escape from confinement negligently suffered",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "224",
+      "bns_section": "262",
+      "subject_offence": "Resistance to lawful apprehension",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "225",
+      "bns_section": "263",
+      "subject_offence": "Resistance to apprehension of another person",
+      "key_change_notes": "Reorganized"
+    },
+    {
+      "ipc_section": "225A",
+      "bns_section": "264",
+      "subject_offence": "Omission to apprehend in cases not provided for",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "225B",
+      "bns_section": "265",
+      "subject_offence": "Resistance in cases not otherwise provided for",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "227",
+      "bns_section": "266",
+      "subject_offence": "Violation of condition of remission of punishment",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "228",
+      "bns_section": "267",
+      "subject_offence": "Intentional insult to public servant in judicial proceeding",
+      "key_change_notes": "Fine increased from Rs 1000 to Rs 5000"
+    },
+    {
+      "ipc_section": "229",
+      "bns_section": "268",
+      "subject_offence": "Personation of assessor",
+      "key_change_notes": "'Juror or assessor' → 'assessor'; 'juryman' excluded"
+    },
+    {
+      "ipc_section": "229A",
+      "bns_section": "269",
+      "subject_offence": "Failure by person released on bail to appear",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "230",
+      "bns_section": "178(2)",
+      "subject_offence": "Coin defined",
+      "key_change_notes": "Consolidated into Section 178"
+    },
+    {
+      "ipc_section": "231",
+      "bns_section": "178",
+      "subject_offence": "Counterfeiting coin",
+      "key_change_notes": "Consolidated – 9 IPC sections → 1 BNS section"
+    },
+    {
+      "ipc_section": "233",
+      "bns_section": "181",
+      "subject_offence": "Making/selling instrument for counterfeiting coin",
+      "key_change_notes": "Consolidated – 6 IPC sections → 1 BNS section"
+    },
+    {
+      "ipc_section": "234",
+      "bns_section": "181",
+      "subject_offence": "Making/selling instrument for counterfeiting Indian coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "235",
+      "bns_section": "181",
+      "subject_offence": "Possession of instrument for counterfeiting coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "237",
+      "bns_section": "179",
+      "subject_offence": "Import/export of counterfeit coin",
+      "key_change_notes": "Consolidated – 11 IPC sections → 1 BNS section"
+    },
+    {
+      "ipc_section": "238",
+      "bns_section": "179",
+      "subject_offence": "Import/export of counterfeit Indian coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "239",
+      "bns_section": "179",
+      "subject_offence": "Delivery of counterfeit coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "240",
+      "bns_section": "179",
+      "subject_offence": "Delivery of counterfeit Indian coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "241",
+      "bns_section": "179",
+      "subject_offence": "Delivery of coin not known to be counterfeit when first possessed",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "242",
+      "bns_section": "180",
+      "subject_offence": "Possession of counterfeit coin",
+      "key_change_notes": "Consolidated – 6 IPC sections → 1 BNS section"
+    },
+    {
+      "ipc_section": "243",
+      "bns_section": "180",
+      "subject_offence": "Possession of counterfeit Indian coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "244",
+      "bns_section": "187",
+      "subject_offence": "Person in mint causing coin of different weight",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "245",
+      "bns_section": "188",
+      "subject_offence": "Unlawfully taking coining instrument from mint",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "246",
+      "bns_section": "178",
+      "subject_offence": "Fraudulently diminishing weight of coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "248",
+      "bns_section": "178",
+      "subject_offence": "Altering appearance of coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "250",
+      "bns_section": "179",
+      "subject_offence": "Delivery of altered coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "251",
+      "bns_section": "179",
+      "subject_offence": "Delivery of altered Indian coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "252",
+      "bns_section": "180",
+      "subject_offence": "Possession of altered coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "253",
+      "bns_section": "180",
+      "subject_offence": "Possession of altered Indian coin",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "254",
+      "bns_section": "179",
+      "subject_offence": "Delivery of coin not known to be altered when first possessed",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "255",
+      "bns_section": "178",
+      "subject_offence": "Counterfeiting Government stamp",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "256",
+      "bns_section": "181",
+      "subject_offence": "Possession of instrument for counterfeiting Govt stamp",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "257",
+      "bns_section": "181",
+      "subject_offence": "Making/selling instrument for counterfeiting Govt stamp",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "258",
+      "bns_section": "179",
+      "subject_offence": "Sale of counterfeit Government stamp",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "259",
+      "bns_section": "180",
+      "subject_offence": "Possession of counterfeit Government stamp",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "260",
+      "bns_section": "179",
+      "subject_offence": "Using counterfeit Government stamp as genuine",
+      "key_change_notes": "Consolidated"
+    },
+    {
+      "ipc_section": "261",
+      "bns_section": "183",
+      "subject_offence": "Effacing writing from substance bearing Govt stamp",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "262",
+      "bns_section": "184",
+      "subject_offence": "Using Government stamp before used",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "263",
+      "bns_section": "185",
+      "subject_offence": "Erasure of mark denoting stamp used",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "263A",
+      "bns_section": "186",
+      "subject_offence": "Prohibition of fictitious stamps",
+      "key_change_notes": "'Her Majesty's dominions' excluded"
+    },
+    {
+      "ipc_section": "264",
+      "bns_section": "Deleted",
+      "subject_offence": "Fraudulent use of false instrument for weighing",
+      "key_change_notes": "DELETED – entire Chapter XIII deleted"
+    },
+    {
+      "ipc_section": "265",
+      "bns_section": "Deleted",
+      "subject_offence": "Fraudulent use of false weight or measure",
+      "key_change_notes": "DELETED"
+    },
+    {
+      "ipc_section": "266",
+      "bns_section": "Deleted",
+      "subject_offence": "Being in possession of false weight or measure",
+      "key_change_notes": "DELETED"
+    },
+    {
+      "ipc_section": "267",
+      "bns_section": "Deleted",
+      "subject_offence": "Making or selling false weight or measure",
+      "key_change_notes": "DELETED"
+    },
+    {
+      "ipc_section": "268",
+      "bns_section": "270",
+      "subject_offence": "Public nuisance",
+      "key_change_notes": "Two paragraphs merged"
+    },
+    {
+      "ipc_section": "269",
+      "bns_section": "271",
+      "subject_offence": "Negligent act likely to spread disease",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "270",
+      "bns_section": "272",
+      "subject_offence": "Malignant act likely to spread disease",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "271",
+      "bns_section": "273",
+      "subject_offence": "Disobedience to quarantine rule",
+      "key_change_notes": "'Vessel' → 'mode of transport'"
+    },
+    {
+      "ipc_section": "272",
+      "bns_section": "274",
+      "subject_offence": "Adulteration of food or drink",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "273",
+      "bns_section": "275",
+      "subject_offence": "Sale of noxious food or drink",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "274",
+      "bns_section": "276",
+      "subject_offence": "Adulteration of drugs",
+      "key_change_notes": "Imprisonment and fine increased"
+    },
+    {
+      "ipc_section": "275",
+      "bns_section": "277",
+      "subject_offence": "Sale of adulterated drugs",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "276",
+      "bns_section": "278",
+      "subject_offence": "Sale of drug as different drug",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "277",
+      "bns_section": "279",
+      "subject_offence": "Fouling water of public spring or reservoir",
+      "key_change_notes": "Imprisonment and fine increased"
+    },
+    {
+      "ipc_section": "278",
+      "bns_section": "280",
+      "subject_offence": "Making atmosphere noxious to health",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "279",
+      "bns_section": "281",
+      "subject_offence": "Rash driving or riding on public way",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "280",
+      "bns_section": "282",
+      "subject_offence": "Rash navigation of vessel",
+      "key_change_notes": "Fine increased from Rs 1000 to Rs 10,000"
+    },
+    {
+      "ipc_section": "281",
+      "bns_section": "283",
+      "subject_offence": "Exhibition of false light, mark or buoy",
+      "key_change_notes": "Fine added; minimum fine Rs 10,000"
+    },
+    {
+      "ipc_section": "282",
+      "bns_section": "284",
+      "subject_offence": "Conveying person by water in unsafe vessel",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "283",
+      "bns_section": "285",
+      "subject_offence": "Danger or obstruction in public way",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "284",
+      "bns_section": "286",
+      "subject_offence": "Negligent conduct with poisonous substance",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "285",
+      "bns_section": "287",
+      "subject_offence": "Negligent conduct with fire or combustible matter",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "286",
+      "bns_section": "288",
+      "subject_offence": "Negligent conduct with explosive substance",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "287",
+      "bns_section": "289",
+      "subject_offence": "Negligent conduct with machinery",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "288",
+      "bns_section": "290",
+      "subject_offence": "Negligent conduct with pulling down/repairing buildings",
+      "key_change_notes": "'Or constructing' added; fine increased"
+    },
+    {
+      "ipc_section": "289",
+      "bns_section": "291",
+      "subject_offence": "Negligent conduct with animal",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "290",
+      "bns_section": "292",
+      "subject_offence": "Punishment for public nuisance (other cases)",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "291",
+      "bns_section": "293",
+      "subject_offence": "Continuance of nuisance after injunction",
+      "key_change_notes": "Fine defined up to Rs 5000"
+    },
+    {
+      "ipc_section": "292",
+      "bns_section": "294",
+      "subject_offence": "Sale of obscene books etc.",
+      "key_change_notes": "Fine increased; electronic content added"
+    },
+    {
+      "ipc_section": "293",
+      "bns_section": "295",
+      "subject_offence": "Sale of obscene objects to young person",
+      "key_change_notes": "'Person under 20' → 'child' (under 18)"
+    },
+    {
+      "ipc_section": "294",
+      "bns_section": "296",
+      "subject_offence": "Obscene acts and songs",
+      "key_change_notes": "Fine defined up to Rs 1000"
+    },
+    {
+      "ipc_section": "294A",
+      "bns_section": "297",
+      "subject_offence": "Keeping lottery office",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "295",
+      "bns_section": "298",
+      "subject_offence": "Injuring/defiling place of worship",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "295A",
+      "bns_section": "299",
+      "subject_offence": "Deliberate acts to outrage religious feelings",
+      "key_change_notes": "'Or through electronic means' added"
+    },
+    {
+      "ipc_section": "296",
+      "bns_section": "300",
+      "subject_offence": "Disturbing religious assembly",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "297",
+      "bns_section": "301",
+      "subject_offence": "Trespassing on burial places",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "298",
+      "bns_section": "302",
+      "subject_offence": "Uttering words to wound religious feelings",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "299",
+      "bns_section": "100",
+      "subject_offence": "Culpable homicide",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "300",
+      "bns_section": "101",
+      "subject_offence": "Murder",
+      "key_change_notes": "Formal changes; ordinals → clauses"
+    },
+    {
+      "ipc_section": "301",
+      "bns_section": "102",
+      "subject_offence": "Culpable homicide by causing death of wrong person",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "302",
+      "bns_section": "103(1)",
+      "subject_offence": "Punishment for murder",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "303",
+      "bns_section": "104",
+      "subject_offence": "Punishment for murder by life-convict",
+      "key_change_notes": "Alternate punishment (life imprisonment) added"
+    },
+    {
+      "ipc_section": "304",
+      "bns_section": "105",
+      "subject_offence": "Punishment for culpable homicide not amounting to murder",
+      "key_change_notes": "Minimum imprisonment 5 years; fine mandatory"
+    },
+    {
+      "ipc_section": "304A",
+      "bns_section": "106(1)",
+      "subject_offence": "Causing death by negligence",
+      "key_change_notes": "Imprisonment increased; doctors added"
+    },
+    {
+      "ipc_section": "304B",
+      "bns_section": "80",
+      "subject_offence": "Dowry death",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "305",
+      "bns_section": "107",
+      "subject_offence": "Abetment of suicide of child or insane person",
+      "key_change_notes": "'Insane' → 'person of unsound mind'"
+    },
+    {
+      "ipc_section": "306",
+      "bns_section": "108",
+      "subject_offence": "Abetment of suicide",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "307",
+      "bns_section": "109",
+      "subject_offence": "Attempt to murder",
+      "key_change_notes": "Alternate punishment for life-convict added"
+    },
+    {
+      "ipc_section": "308",
+      "bns_section": "110",
+      "subject_offence": "Attempt to commit culpable homicide",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "309",
+      "bns_section": "Deleted",
+      "subject_offence": "Attempt to commit suicide",
+      "key_change_notes": "DELETED"
+    },
+    {
+      "ipc_section": "310",
+      "bns_section": "Deleted",
+      "subject_offence": "Thug",
+      "key_change_notes": "DELETED"
+    },
+    {
+      "ipc_section": "311",
+      "bns_section": "Deleted",
+      "subject_offence": "Punishment (Thug)",
+      "key_change_notes": "DELETED"
+    },
+    {
+      "ipc_section": "312",
+      "bns_section": "88",
+      "subject_offence": "Causing miscarriage",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "313",
+      "bns_section": "89",
+      "subject_offence": "Causing miscarriage without woman's consent",
+      "key_change_notes": "Section number reference updated"
+    },
+    {
+      "ipc_section": "314",
+      "bns_section": "90",
+      "subject_offence": "Death caused by act done with intent to cause miscarriage",
+      "key_change_notes": "Minor changes"
+    },
+    {
+      "ipc_section": "315",
+      "bns_section": "91",
+      "subject_offence": "Act to prevent child being born alive",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "316",
+      "bns_section": "92",
+      "subject_offence": "Causing death of quick unborn child",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "317",
+      "bns_section": "93",
+      "subject_offence": "Exposure/abandonment of child under 12",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "318",
+      "bns_section": "94",
+      "subject_offence": "Concealment of birth by secret disposal",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "319",
+      "bns_section": "114",
+      "subject_offence": "Hurt",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "320",
+      "bns_section": "116",
+      "subject_offence": "Grievous hurt",
+      "key_change_notes": "Suffering threshold reduced from 20 to 15 days"
+    },
+    {
+      "ipc_section": "321",
+      "bns_section": "115(1)",
+      "subject_offence": "Voluntarily causing hurt",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "322",
+      "bns_section": "117(1)",
+      "subject_offence": "Voluntarily causing grievous hurt",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "323",
+      "bns_section": "115(2)",
+      "subject_offence": "Punishment for voluntarily causing hurt",
+      "key_change_notes": "Fine increased to Rs 10,000"
+    },
+    {
+      "ipc_section": "324",
+      "bns_section": "118(1)",
+      "subject_offence": "Voluntarily causing hurt by dangerous weapons",
+      "key_change_notes": "Fine increased to Rs 20,000"
+    },
+    {
+      "ipc_section": "325",
+      "bns_section": "117(2)",
+      "subject_offence": "Punishment for voluntarily causing grievous hurt",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "326",
+      "bns_section": "118(2)",
+      "subject_offence": "Voluntarily causing grievous hurt by dangerous weapons",
+      "key_change_notes": "Mandatory minimum 1 year added"
+    },
+    {
+      "ipc_section": "326A",
+      "bns_section": "124(1)",
+      "subject_offence": "Voluntarily causing grievous hurt by acid",
+      "key_change_notes": "Permanent vegetative state added"
+    },
+    {
+      "ipc_section": "326B",
+      "bns_section": "124(2)",
+      "subject_offence": "Voluntarily throwing/attempting to throw acid",
+      "key_change_notes": "Permanent vegetative state added"
+    },
+    {
+      "ipc_section": "327",
+      "bns_section": "119(1)",
+      "subject_offence": "Voluntarily causing hurt to extort property",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "328",
+      "bns_section": "123",
+      "subject_offence": "Causing hurt by means of poison",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "329",
+      "bns_section": "119(2)",
+      "subject_offence": "Voluntarily causing grievous hurt to extort property",
+      "key_change_notes": "Reference to subsection (1) added"
+    },
+    {
+      "ipc_section": "330",
+      "bns_section": "120(1)",
+      "subject_offence": "Voluntarily causing hurt to extort confession",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "331",
+      "bns_section": "120(2)",
+      "subject_offence": "Voluntarily causing grievous hurt to extort confession",
+      "key_change_notes": "Reference added"
+    },
+    {
+      "ipc_section": "332",
+      "bns_section": "121(1)",
+      "subject_offence": "Voluntarily causing hurt to deter public servant",
+      "key_change_notes": "Imprisonment increased from 3 to 5 years"
+    },
+    {
+      "ipc_section": "333",
+      "bns_section": "121(2)",
+      "subject_offence": "Voluntarily causing grievous hurt to deter public servant",
+      "key_change_notes": "Mandatory minimum 1 year added"
+    },
+    {
+      "ipc_section": "334",
+      "bns_section": "122(1)",
+      "subject_offence": "Voluntarily causing hurt on provocation",
+      "key_change_notes": "Fine increased to Rs 5000"
+    },
+    {
+      "ipc_section": "335",
+      "bns_section": "122(2)",
+      "subject_offence": "Voluntarily causing grievous hurt on provocation",
+      "key_change_notes": "Imprisonment and fine increased"
+    },
+    {
+      "ipc_section": "336",
+      "bns_section": "125",
+      "subject_offence": "Act endangering life or personal safety",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "337",
+      "bns_section": "125(a)",
+      "subject_offence": "Causing hurt by act endangering life",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "338",
+      "bns_section": "125(b)",
+      "subject_offence": "Causing grievous hurt by act endangering life",
+      "key_change_notes": "Imprisonment and fine increased"
+    },
+    {
+      "ipc_section": "339",
+      "bns_section": "126(1)",
+      "subject_offence": "Wrongful restraint",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "340",
+      "bns_section": "127(1)",
+      "subject_offence": "Wrongful confinement",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "341",
+      "bns_section": "126(2)",
+      "subject_offence": "Punishment for wrongful restraint",
+      "key_change_notes": "Fine increased to Rs 5000"
+    },
+    {
+      "ipc_section": "342",
+      "bns_section": "127(2)",
+      "subject_offence": "Punishment for wrongful confinement",
+      "key_change_notes": "Fine increased to Rs 5000"
+    },
+    {
+      "ipc_section": "343",
+      "bns_section": "127(3)",
+      "subject_offence": "Wrongful confinement for three or more days",
+      "key_change_notes": "Imprisonment and fine increased"
+    },
+    {
+      "ipc_section": "344",
+      "bns_section": "127(4)",
+      "subject_offence": "Wrongful confinement for ten or more days",
+      "key_change_notes": "Imprisonment and fine increased"
+    },
+    {
+      "ipc_section": "345",
+      "bns_section": "127(5)",
+      "subject_offence": "Wrongful confinement of person for whose liberation writ issued",
+      "key_change_notes": "Fine added"
+    },
+    {
+      "ipc_section": "346",
+      "bns_section": "127(6)",
+      "subject_offence": "Wrongful confinement in secret",
+      "key_change_notes": "Imprisonment and fine increased"
+    },
+    {
+      "ipc_section": "347",
+      "bns_section": "127(7)",
+      "subject_offence": "Wrongful confinement to extort property",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "348",
+      "bns_section": "127(8)",
+      "subject_offence": "Wrongful confinement to extort confession",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "349",
+      "bns_section": "128",
+      "subject_offence": "Force",
+      "key_change_notes": "Phraseology changed; ordinals → (a),(b),(c)"
+    },
+    {
+      "ipc_section": "350",
+      "bns_section": "129",
+      "subject_offence": "Criminal force",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "351",
+      "bns_section": "130",
+      "subject_offence": "Assault",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "352",
+      "bns_section": "131",
+      "subject_offence": "Punishment for assault or criminal force (non-grave provocation)",
+      "key_change_notes": "Fine increased to Rs 1000"
+    },
+    {
+      "ipc_section": "353",
+      "bns_section": "132",
+      "subject_offence": "Assault/criminal force to deter public servant",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "354",
+      "bns_section": "74",
+      "subject_offence": "Assault/criminal force to outrage woman's modesty",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "354A",
+      "bns_section": "75",
+      "subject_offence": "Sexual harassment",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "354B",
+      "bns_section": "76",
+      "subject_offence": "Assault/criminal force to woman with intent to disrobe",
+      "key_change_notes": "'Any man who' → 'Whoever'"
+    },
+    {
+      "ipc_section": "354C",
+      "bns_section": "77",
+      "subject_offence": "Voyeurism",
+      "key_change_notes": "'Any man who' → 'Whoever'"
+    },
+    {
+      "ipc_section": "354D",
+      "bns_section": "78",
+      "subject_offence": "Stalking",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "355",
+      "bns_section": "133",
+      "subject_offence": "Assault/criminal force to dishonour person",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "356",
+      "bns_section": "134",
+      "subject_offence": "Assault/criminal force in attempt to commit theft",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "357",
+      "bns_section": "135",
+      "subject_offence": "Assault/criminal force in attempt to wrongfully confine",
+      "key_change_notes": "Fine increased to Rs 5000"
+    },
+    {
+      "ipc_section": "358",
+      "bns_section": "136",
+      "subject_offence": "Assault/criminal force on grave provocation",
+      "key_change_notes": "Fine increased to Rs 1000"
+    },
+    {
+      "ipc_section": "359",
+      "bns_section": "137(1)",
+      "subject_offence": "Kidnapping",
+      "key_change_notes": "Restructured"
+    },
+    {
+      "ipc_section": "360",
+      "bns_section": "137(1)(a)",
+      "subject_offence": "Kidnapping from India",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "361",
+      "bns_section": "137(1)(b)",
+      "subject_offence": "Kidnapping from lawful guardianship",
+      "key_change_notes": "'Minor under 16/18' → 'child' (gender neutral)"
+    },
+    {
+      "ipc_section": "362",
+      "bns_section": "138",
+      "subject_offence": "Abduction",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "363",
+      "bns_section": "137(2)",
+      "subject_offence": "Punishment for kidnapping",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "363A",
+      "bns_section": "139",
+      "subject_offence": "Kidnapping/maiming child for begging",
+      "key_change_notes": "'Minor' → 'child'; rigorous imprisonment; max = life"
+    },
+    {
+      "ipc_section": "364",
+      "bns_section": "140(1)",
+      "subject_offence": "Kidnapping/abducting in order to murder",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "364A",
+      "bns_section": "140(2)",
+      "subject_offence": "Kidnapping for ransom",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "365",
+      "bns_section": "140(3)",
+      "subject_offence": "Kidnapping/abducting with intent to confine",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "366",
+      "bns_section": "87",
+      "subject_offence": "Kidnapping/abducting woman to compel marriage",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "366A",
+      "bns_section": "96",
+      "subject_offence": "Procuration of child",
+      "key_change_notes": "'Minor girl' → 'child' (gender neutral)"
+    },
+    {
+      "ipc_section": "366B",
+      "bns_section": "141",
+      "subject_offence": "Importation of girl from foreign country",
+      "key_change_notes": "Boys also included; gender neutral"
+    },
+    {
+      "ipc_section": "367",
+      "bns_section": "140(4)",
+      "subject_offence": "Kidnapping/abducting to subject to grievous hurt/slavery",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "368",
+      "bns_section": "142",
+      "subject_offence": "Wrongfully concealing kidnapped/abducted person",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "369",
+      "bns_section": "97",
+      "subject_offence": "Kidnapping/abducting child under 10 to steal",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "370",
+      "bns_section": "143",
+      "subject_offence": "Trafficking of person",
+      "key_change_notes": "'Minor' → 'child'"
+    },
+    {
+      "ipc_section": "370A",
+      "bns_section": "144",
+      "subject_offence": "Exploitation of trafficked person",
+      "key_change_notes": "Imprisonment limits increased"
+    },
+    {
+      "ipc_section": "371",
+      "bns_section": "145",
+      "subject_offence": "Habitual dealing in slaves",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "372",
+      "bns_section": "98",
+      "subject_offence": "Selling minor for prostitution",
+      "key_change_notes": "'Minor' → 'child'"
+    },
+    {
+      "ipc_section": "373",
+      "bns_section": "99",
+      "subject_offence": "Buying minor for prostitution",
+      "key_change_notes": "Mandatory minimum 7 years; max extended to 14 years"
+    },
+    {
+      "ipc_section": "374",
+      "bns_section": "146",
+      "subject_offence": "Unlawful compulsory labour",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "375",
+      "bns_section": "63",
+      "subject_offence": "Rape",
+      "key_change_notes": "Age of consent: 15 years → 18 years"
+    },
+    {
+      "ipc_section": "376",
+      "bns_section": "64",
+      "subject_offence": "Punishment for rape",
+      "key_change_notes": "'Military' → 'army'"
+    },
+    {
+      "ipc_section": "376(3)",
+      "bns_section": "65(1)",
+      "subject_offence": "Punishment for rape on woman under 16 years",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "376A",
+      "bns_section": "66",
+      "subject_offence": "Punishment for causing death/persistent vegetative state",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "376AB",
+      "bns_section": "65(2)",
+      "subject_offence": "Punishment for rape on woman under 12 years",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "376B",
+      "bns_section": "67",
+      "subject_offence": "Sexual intercourse by husband during separation",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "376C",
+      "bns_section": "68",
+      "subject_offence": "Sexual intercourse by person in authority",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "376D",
+      "bns_section": "70(1)",
+      "subject_offence": "Gang rape",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "376E",
+      "bns_section": "71",
+      "subject_offence": "Punishment for repeat offenders",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "377",
+      "bns_section": "Deleted",
+      "subject_offence": "Unnatural offences",
+      "key_change_notes": "DELETED"
+    },
+    {
+      "ipc_section": "378",
+      "bns_section": "303(1)",
+      "subject_offence": "Theft",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "379",
+      "bns_section": "303(2)",
+      "subject_offence": "Punishment for theft",
+      "key_change_notes": "Punishment for subsequent convictions added"
+    },
+    {
+      "ipc_section": "380",
+      "bns_section": "305",
+      "subject_offence": "Theft in dwelling house",
+      "key_change_notes": "Transportation and place of worship added"
+    },
+    {
+      "ipc_section": "381",
+      "bns_section": "306",
+      "subject_offence": "Theft by clerk or servant",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "382",
+      "bns_section": "307",
+      "subject_offence": "Theft after preparation to cause death/hurt/restraint",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "383",
+      "bns_section": "308(1)",
+      "subject_offence": "Extortion",
+      "key_change_notes": "New illustration added"
+    },
+    {
+      "ipc_section": "384",
+      "bns_section": "308(2)",
+      "subject_offence": "Punishment for extortion",
+      "key_change_notes": "Imprisonment increased from 3 to 7 years"
+    },
+    {
+      "ipc_section": "385",
+      "bns_section": "308(3)",
+      "subject_offence": "Putting person in fear to commit extortion",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "386",
+      "bns_section": "308(5)",
+      "subject_offence": "Extortion by putting in fear of death/grievous hurt",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "387",
+      "bns_section": "308(4)",
+      "subject_offence": "Putting person in fear of death/grievous hurt for extortion",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "388",
+      "bns_section": "308(6)",
+      "subject_offence": "Extortion by threat of accusation",
+      "key_change_notes": "Reference to S.377 removed"
+    },
+    {
+      "ipc_section": "389",
+      "bns_section": "308(7)",
+      "subject_offence": "Putting in fear of accusation for extortion",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "390",
+      "bns_section": "309(1)(2)(3)",
+      "subject_offence": "Robbery",
+      "key_change_notes": "Reorganized into clauses"
+    },
+    {
+      "ipc_section": "391",
+      "bns_section": "310(1)",
+      "subject_offence": "Dacoity",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "392",
+      "bns_section": "309(4)",
+      "subject_offence": "Punishment for robbery",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "393",
+      "bns_section": "309(5)",
+      "subject_offence": "Attempt to commit robbery",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "394",
+      "bns_section": "309(6)",
+      "subject_offence": "Voluntarily causing hurt in committing robbery",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "395",
+      "bns_section": "310(2)",
+      "subject_offence": "Punishment for dacoity",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "396",
+      "bns_section": "310(3)",
+      "subject_offence": "Dacoity with murder",
+      "key_change_notes": "Mandatory minimum 10 years imprisonment"
+    },
+    {
+      "ipc_section": "397",
+      "bns_section": "311",
+      "subject_offence": "Robbery/dacoity with attempt to cause death/grievous hurt",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "398",
+      "bns_section": "312",
+      "subject_offence": "Attempt to commit robbery/dacoity when armed",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "399",
+      "bns_section": "310(4)",
+      "subject_offence": "Making preparation to commit dacoity",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "400",
+      "bns_section": "310(6)",
+      "subject_offence": "Punishment for belonging to gang of dacoits",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "401",
+      "bns_section": "313",
+      "subject_offence": "Punishment for belonging to gang of robbers/thieves",
+      "key_change_notes": "'Thieves' → 'robbers'"
+    },
+    {
+      "ipc_section": "402",
+      "bns_section": "310(5)",
+      "subject_offence": "Assembling for purpose of committing dacoity",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "403",
+      "bns_section": "314",
+      "subject_offence": "Dishonest misappropriation of property",
+      "key_change_notes": "Mandatory minimum 6 months added; fine added"
+    },
+    {
+      "ipc_section": "404",
+      "bns_section": "315",
+      "subject_offence": "Dishonest misappropriation of deceased person's property",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "405",
+      "bns_section": "316(1)",
+      "subject_offence": "Criminal breach of trust",
+      "key_change_notes": "Presented as sub-section"
+    },
+    {
+      "ipc_section": "406",
+      "bns_section": "316(2)",
+      "subject_offence": "Punishment for criminal breach of trust",
+      "key_change_notes": "Imprisonment increased from 3 to 5 years"
+    },
+    {
+      "ipc_section": "407",
+      "bns_section": "316(3)",
+      "subject_offence": "Criminal breach of trust by carrier",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "408",
+      "bns_section": "316(4)",
+      "subject_offence": "Criminal breach of trust by clerk or servant",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "409",
+      "bns_section": "316(5)",
+      "subject_offence": "Criminal breach of trust by public servant/banker",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "410",
+      "bns_section": "317(1)",
+      "subject_offence": "Stolen property",
+      "key_change_notes": "'Cheating' added"
+    },
+    {
+      "ipc_section": "411",
+      "bns_section": "317(2)",
+      "subject_offence": "Dishonestly receiving stolen property",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "412",
+      "bns_section": "317(3)",
+      "subject_offence": "Receiving property stolen in dacoity",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "413",
+      "bns_section": "317(4)",
+      "subject_offence": "Habitually dealing in stolen property",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "414",
+      "bns_section": "317(5)",
+      "subject_offence": "Assisting in concealment of stolen property",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "415",
+      "bns_section": "318(1)",
+      "subject_offence": "Cheating",
+      "key_change_notes": "Presented as sub-section"
+    },
+    {
+      "ipc_section": "416",
+      "bns_section": "319(1)",
+      "subject_offence": "Cheating by personation",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "417",
+      "bns_section": "318(2)",
+      "subject_offence": "Punishment for cheating",
+      "key_change_notes": "Imprisonment increased from 1 to 3 years"
+    },
+    {
+      "ipc_section": "418",
+      "bns_section": "318(3)",
+      "subject_offence": "Cheating with knowledge of wrongful loss",
+      "key_change_notes": "Imprisonment increased from 3 to 5 years"
+    },
+    {
+      "ipc_section": "419",
+      "bns_section": "319(2)",
+      "subject_offence": "Punishment for cheating by personation",
+      "key_change_notes": "Imprisonment increased from 3 to 5 years"
+    },
+    {
+      "ipc_section": "420",
+      "bns_section": "318(4)",
+      "subject_offence": "Cheating and inducing delivery of property",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "421",
+      "bns_section": "320",
+      "subject_offence": "Dishonest/fraudulent removal to prevent creditor distribution",
+      "key_change_notes": "Mandatory minimum 6 months"
+    },
+    {
+      "ipc_section": "422",
+      "bns_section": "321",
+      "subject_offence": "Dishonestly preventing debt available for creditors",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "423",
+      "bns_section": "322",
+      "subject_offence": "Dishonest/fraudulent execution of deed of transfer",
+      "key_change_notes": "Imprisonment increased from 2 to 3 years"
+    },
+    {
+      "ipc_section": "424",
+      "bns_section": "323",
+      "subject_offence": "Dishonest/fraudulent removal or concealment of property",
+      "key_change_notes": "Imprisonment increased from 2 to 3 years"
+    },
+    {
+      "ipc_section": "425",
+      "bns_section": "324(1)",
+      "subject_offence": "Mischief",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "426",
+      "bns_section": "324(2)",
+      "subject_offence": "Punishment for mischief",
+      "key_change_notes": "Imprisonment increased from 3 months to 6 months"
+    },
+    {
+      "ipc_section": "427",
+      "bns_section": "324(4)",
+      "subject_offence": "Mischief causing damage of Rs 50",
+      "key_change_notes": "Threshold raised to Rs 20,000-1 lakh"
+    },
+    {
+      "ipc_section": "428",
+      "bns_section": "325",
+      "subject_offence": "Mischief by killing/maiming animal worth Rs 10",
+      "key_change_notes": "Imprisonment increased; any animal included"
+    },
+    {
+      "ipc_section": "429",
+      "bns_section": "325",
+      "subject_offence": "Mischief by killing/maiming cattle/animal worth Rs 50",
+      "key_change_notes": "Consolidated into Section 325 BNS"
+    },
+    {
+      "ipc_section": "430",
+      "bns_section": "326(a)",
+      "subject_offence": "Mischief by injury to works of irrigation",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "431",
+      "bns_section": "326(b)",
+      "subject_offence": "Mischief by injury to public road/bridge/river",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "432",
+      "bns_section": "326(c)",
+      "subject_offence": "Mischief by causing inundation",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "433",
+      "bns_section": "326(d)",
+      "subject_offence": "Mischief by destroying lighthouse or sea-mark",
+      "key_change_notes": "Scope widened to navigation signals for rail/aircraft/ship"
+    },
+    {
+      "ipc_section": "434",
+      "bns_section": "326(e)",
+      "subject_offence": "Mischief by destroying landmark",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "435",
+      "bns_section": "326(f)",
+      "subject_offence": "Mischief by fire/explosive substance",
+      "key_change_notes": "Agricultural produce added"
+    },
+    {
+      "ipc_section": "436",
+      "bns_section": "326(g)",
+      "subject_offence": "Mischief by fire/explosive to destroy house",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "437",
+      "bns_section": "327(1)",
+      "subject_offence": "Mischief to destroy/make unsafe decked vessel",
+      "key_change_notes": "Rail and aircraft added"
+    },
+    {
+      "ipc_section": "438",
+      "bns_section": "327(2)",
+      "subject_offence": "Punishment for above (fire/explosive)",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "439",
+      "bns_section": "328",
+      "subject_offence": "Intentionally running vessel aground with intent to steal",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "440",
+      "bns_section": "324(6)",
+      "subject_offence": "Mischief after preparation to cause death or hurt",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "441",
+      "bns_section": "329(1)",
+      "subject_offence": "Criminal trespass",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "442",
+      "bns_section": "329(2)",
+      "subject_offence": "House-trespass",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "443",
+      "bns_section": "330(1)",
+      "subject_offence": "Lurking house-trespass",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "444",
+      "bns_section": "330(1)",
+      "subject_offence": "Lurking house-trespass by night",
+      "key_change_notes": "DELETED as separate section; merged into 330"
+    },
+    {
+      "ipc_section": "445",
+      "bns_section": "330(2)",
+      "subject_offence": "House-breaking",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "446",
+      "bns_section": "330(2)",
+      "subject_offence": "House-breaking by night",
+      "key_change_notes": "DELETED as separate section; 'by night' → 'after sunset and before sunrise'"
+    },
+    {
+      "ipc_section": "447",
+      "bns_section": "329(3)",
+      "subject_offence": "Punishment for criminal trespass",
+      "key_change_notes": "Fine increased from Rs 500 to Rs 5000"
+    },
+    {
+      "ipc_section": "448",
+      "bns_section": "329(4)",
+      "subject_offence": "Punishment for house-trespass",
+      "key_change_notes": "Fine increased from Rs 1000 to Rs 5000"
+    },
+    {
+      "ipc_section": "449",
+      "bns_section": "332(a)",
+      "subject_offence": "House-trespass to commit offence punishable with death",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "450",
+      "bns_section": "332(b)",
+      "subject_offence": "House-trespass to commit offence punishable with life imprisonment",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "451",
+      "bns_section": "332(c)",
+      "subject_offence": "House-trespass to commit offence punishable with imprisonment",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "452",
+      "bns_section": "333",
+      "subject_offence": "House-trespass after preparation for hurt/assault/wrongful restraint",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "453",
+      "bns_section": "331(1)",
+      "subject_offence": "Punishment for lurking house-trespass or house-breaking",
+      "key_change_notes": "'Lurking' dropped from heading"
+    },
+    {
+      "ipc_section": "454",
+      "bns_section": "331(3)",
+      "subject_offence": "Lurking house-trespass/house-breaking to commit offence",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "455",
+      "bns_section": "331(5)",
+      "subject_offence": "Lurking house-trespass/house-breaking after preparation for hurt",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "456",
+      "bns_section": "331(2)",
+      "subject_offence": "Punishment for lurking house-trespass by night",
+      "key_change_notes": "'By night' → 'after sunset and before sunrise'"
+    },
+    {
+      "ipc_section": "457",
+      "bns_section": "331(4)",
+      "subject_offence": "Lurking house-trespass/house-breaking by night for offence",
+      "key_change_notes": "'By night' → 'after sunset and before sunrise'"
+    },
+    {
+      "ipc_section": "458",
+      "bns_section": "331(6)",
+      "subject_offence": "Lurking house-trespass/house-breaking by night after preparation",
+      "key_change_notes": "'By night' → 'after sunset and before sunrise'"
+    },
+    {
+      "ipc_section": "459",
+      "bns_section": "331(7)",
+      "subject_offence": "Grievous hurt in lurking house-trespass/house-breaking",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "460",
+      "bns_section": "331(8)",
+      "subject_offence": "All persons in lurking house-trespass by night",
+      "key_change_notes": "'By night' → 'after sunset and before sunrise'"
+    },
+    {
+      "ipc_section": "461",
+      "bns_section": "334(1)",
+      "subject_offence": "Dishonestly breaking open receptacle",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "462",
+      "bns_section": "334(2)",
+      "subject_offence": "Punishment by person entrusted with custody",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "463",
+      "bns_section": "336(1)",
+      "subject_offence": "Forgery",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "464",
+      "bns_section": "335",
+      "subject_offence": "Making a false document",
+      "key_change_notes": "Heading changed; ordinals → (A),(B),(C)"
+    },
+    {
+      "ipc_section": "465",
+      "bns_section": "336(2)",
+      "subject_offence": "Punishment for forgery",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "466",
+      "bns_section": "337",
+      "subject_offence": "Forgery of court record or public register",
+      "key_change_notes": "Voter ID and Aadhaar card added; 'baptism' excluded"
+    },
+    {
+      "ipc_section": "467",
+      "bns_section": "338",
+      "subject_offence": "Forgery of valuable security, will etc.",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "468",
+      "bns_section": "336(3)",
+      "subject_offence": "Forgery for purpose of cheating",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "469",
+      "bns_section": "336(4)",
+      "subject_offence": "Forgery for purpose of harming reputation",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "470",
+      "bns_section": "340(1)",
+      "subject_offence": "Forged document or electronic record",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "471",
+      "bns_section": "340(2)",
+      "subject_offence": "Using as genuine a forged document",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "472",
+      "bns_section": "341(1)",
+      "subject_offence": "Making/possessing counterfeit seal to commit forgery",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "473",
+      "bns_section": "341(2)",
+      "subject_offence": "Making/possessing counterfeit seal to commit forgery otherwise",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "474",
+      "bns_section": "339",
+      "subject_offence": "Having possession of forged document knowing it to be forged",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "475",
+      "bns_section": "342(1)",
+      "subject_offence": "Counterfeiting device/mark for authenticating documents",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "476",
+      "bns_section": "342(2)",
+      "subject_offence": "Counterfeiting device/mark for authenticating other documents",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "477",
+      "bns_section": "343",
+      "subject_offence": "Fraudulent cancellation/destruction of will or valuable security",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "477A",
+      "bns_section": "344",
+      "subject_offence": "Falsification of accounts",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "479",
+      "bns_section": "345(1)",
+      "subject_offence": "Property mark",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "481",
+      "bns_section": "345(2)",
+      "subject_offence": "Using a false property mark",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "482",
+      "bns_section": "345(3)",
+      "subject_offence": "Punishment for using false property mark",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "483",
+      "bns_section": "347(1)",
+      "subject_offence": "Counterfeiting a property mark",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "484",
+      "bns_section": "347(2)",
+      "subject_offence": "Counterfeiting a mark used by public servant",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "485",
+      "bns_section": "348",
+      "subject_offence": "Making/possessing instrument for counterfeiting property mark",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "486",
+      "bns_section": "349",
+      "subject_offence": "Selling goods marked with counterfeit property mark",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "487",
+      "bns_section": "350(1)",
+      "subject_offence": "Making false mark on receptacle containing goods",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "488",
+      "bns_section": "350(2)",
+      "subject_offence": "Punishment for making use of false mark",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "489",
+      "bns_section": "346",
+      "subject_offence": "Tampering with property mark with intent to injure",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "489A",
+      "bns_section": "178",
+      "subject_offence": "Counterfeiting currency-notes or bank-notes",
+      "key_change_notes": "Consolidated into Section 178"
+    },
+    {
+      "ipc_section": "489B",
+      "bns_section": "179",
+      "subject_offence": "Using as genuine forged currency-notes or bank-notes",
+      "key_change_notes": "Consolidated into Section 179"
+    },
+    {
+      "ipc_section": "489C",
+      "bns_section": "180",
+      "subject_offence": "Possession of forged currency-notes or bank-notes",
+      "key_change_notes": "Consolidated into Section 180"
+    },
+    {
+      "ipc_section": "489D",
+      "bns_section": "181",
+      "subject_offence": "Making/possessing instruments for forging currency-notes",
+      "key_change_notes": "Consolidated into Section 181"
+    },
+    {
+      "ipc_section": "489E",
+      "bns_section": "182",
+      "subject_offence": "Making/using documents resembling currency-notes",
+      "key_change_notes": "Fine increased"
+    },
+    {
+      "ipc_section": "491",
+      "bns_section": "357",
+      "subject_offence": "Breach of contract to attend on helpless person",
+      "key_change_notes": "Fine increased from Rs 200 to Rs 5000"
+    },
+    {
+      "ipc_section": "493",
+      "bns_section": "81",
+      "subject_offence": "Cohabitation caused by deceitfully inducing belief of marriage",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "494",
+      "bns_section": "82(1)",
+      "subject_offence": "Marrying again during lifetime of husband/wife",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "495",
+      "bns_section": "82(2)",
+      "subject_offence": "Marrying again with concealment of former marriage",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "496",
+      "bns_section": "83",
+      "subject_offence": "Marriage ceremony fraudulently gone through without lawful marriage",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "497",
+      "bns_section": "Deleted",
+      "subject_offence": "Adultery",
+      "key_change_notes": "DELETED"
+    },
+    {
+      "ipc_section": "498",
+      "bns_section": "84",
+      "subject_offence": "Enticing or taking away married woman",
+      "key_change_notes": "Some words excluded"
+    },
+    {
+      "ipc_section": "499",
+      "bns_section": "356(1)",
+      "subject_offence": "Defamation",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "500",
+      "bns_section": "356(2)",
+      "subject_offence": "Punishment for defamation",
+      "key_change_notes": "Community service added as alternate punishment"
+    },
+    {
+      "ipc_section": "501",
+      "bns_section": "356(3)",
+      "subject_offence": "Printing/engraving matter known to be defamatory",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "502",
+      "bns_section": "356(4)",
+      "subject_offence": "Sale of printed/engraved defamatory matter",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "503",
+      "bns_section": "351(1)",
+      "subject_offence": "Criminal intimidation",
+      "key_change_notes": "'By any means' added"
+    },
+    {
+      "ipc_section": "504",
+      "bns_section": "352",
+      "subject_offence": "Intentional insult to provoke breach of peace",
+      "key_change_notes": "'In any manner' added"
+    },
+    {
+      "ipc_section": "505",
+      "bns_section": "353",
+      "subject_offence": "Statements conducing to public mischief",
+      "key_change_notes": "'False information' and electronic means added"
+    },
+    {
+      "ipc_section": "506",
+      "bns_section": "351(2)/351(3)",
+      "subject_offence": "Punishment for criminal intimidation",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "507",
+      "bns_section": "351(4)",
+      "subject_offence": "Criminal intimidation by anonymous communication",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "508",
+      "bns_section": "354",
+      "subject_offence": "Act caused by inducing person to believe in divine displeasure",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "509",
+      "bns_section": "79",
+      "subject_offence": "Word/gesture/act to insult modesty of woman",
+      "key_change_notes": "No change"
+    },
+    {
+      "ipc_section": "510",
+      "bns_section": "355",
+      "subject_offence": "Misconduct in public by drunken person",
+      "key_change_notes": "Fine increased from Rs 10 to Rs 1000; community service added"
+    },
+    {
+      "ipc_section": "511",
+      "bns_section": "62",
+      "subject_offence": "Punishment for attempting to commit offences",
+      "key_change_notes": "No change"
+    }
+  ]
+}

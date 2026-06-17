@@ -25,10 +25,19 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 df = pd.read_excel("bns.xlsx")
 
-# load IPC to BNS mapping
+# load IPC to BNS mapping from IPC_to_BNS_Lookup.json
 try:
-    with open("ipc_bns_map.json", "r") as f:
-        ipc_bns_map = json.load(f)
+    with open("IPC_to_BNS_Lookup.json", "r") as f:
+        ipc_bns_data = json.load(f)
+        # Transform the data structure for easier lookup
+        ipc_bns_map = {}
+        for entry in ipc_bns_data.get("data", []):
+            ipc_bns_map[entry["ipc_section"]] = {
+                "bns_section": entry["bns_section"],
+                "subject_offence": entry.get("subject_offence", ""),
+                "key_change_notes": entry.get("key_change_notes", ""),
+                "effective_date": ipc_bns_data.get("effective_date", "2024-07-01")
+            }
 except FileNotFoundError:
     ipc_bns_map = {}
 
@@ -183,23 +192,40 @@ def ipc_lookup(ipc_number: str):
 
     mapping = ipc_bns_map[ipc_number]
     bns_num = mapping['bns_section']
+    effective_date = mapping.get('effective_date', '2024-07-01')
+    
+    # Format the effective date message
+    effective_date_msg = f"IPC Section {ipc_number} was changed to BNS Section {bns_num} on July 1, 2024"
 
-    # fetch BNS section details
-    result = df[df['section_number'] == bns_num]
+    # fetch BNS section details from bns.xlsx
+    # Try to match by section_number (may be string or int)
+    result = df[df['section_number'].astype(str).str.strip() == str(bns_num).strip()]
+    
+    if result.empty:
+        # Try matching as integer if it looks like one
+        try:
+            bns_num_int = int(float(bns_num.split('(')[0]))
+            result = df[df['section_number'] == bns_num_int]
+        except:
+            pass
+    
     bns_details = None
     if not result.empty:
         row = result.iloc[0]
         bns_details = {
-            "section_number": int(row['section_number']),
+            "section_number": str(row['section_number']),
             "title": str(row['title']),
             "description": str(row['description']),
-            "punishment": str(row['punishment'])
+            "punishment": str(row['punishment']),
+            "keywords": str(row.get('keywords', '')) if 'keywords' in row.index else ''
         }
 
     return {
         "ipc_section": ipc_number,
-        "offence": mapping['offence'],
-        "note": mapping['note'],
+        "subject_offence": mapping.get('subject_offence', ''),
+        "key_change_notes": mapping.get('key_change_notes', ''),
+        "effective_date_message": effective_date_msg,
+        "effective_date": effective_date,
         "bns_section": bns_num,
         "bns_details": bns_details
     }
