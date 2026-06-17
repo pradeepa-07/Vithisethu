@@ -32,9 +32,11 @@ try:
 except FileNotFoundError:
     ipc_bns_map = {}
 
+
 @app.get("/")
 def home():
-    return {"message": "Law Lens API is running 🚀"}
+    return {"message": "Vidhisethu API is running 🚀"}
+
 
 @app.get("/search")
 def search(query: str):
@@ -91,6 +93,7 @@ def search(query: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
 
+
 @app.post("/chat")
 def chat(payload: dict):
     messages = payload.get("messages", [])
@@ -101,7 +104,8 @@ def chat(payload: dict):
     try:
         query = messages[-1].get("content", "")
         if not query.strip():
-            raise HTTPException(status_code=400, detail="Last message cannot be empty")
+            raise HTTPException(
+                status_code=400, detail="Last message cannot be empty")
 
         query_vector = model.encode(query).tolist()
         results = index.query(
@@ -146,6 +150,7 @@ def chat(payload: dict):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Chat failed: {str(e)}")
 
+
 @app.get("/section")
 def get_section(number: int):
     try:
@@ -166,12 +171,15 @@ def get_section(number: int):
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Section lookup failed: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail=f"Section lookup failed: {str(e)}")
+
 
 @app.get("/ipc/{ipc_number}")
 def ipc_lookup(ipc_number: str):
     if ipc_number not in ipc_bns_map:
-        raise HTTPException(status_code=404, detail=f"IPC Section {ipc_number} not found in mapping")
+        raise HTTPException(
+            status_code=404, detail=f"IPC Section {ipc_number} not found in mapping")
 
     mapping = ipc_bns_map[ipc_number]
     bns_num = mapping['bns_section']

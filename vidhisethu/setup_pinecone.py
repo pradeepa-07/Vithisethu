@@ -1,3 +1,4 @@
+from pinecone import Pinecone, ServerlessSpec
 from pinecone import Pinecone
 from sentence_transformers import SentenceTransformer
 import pandas as pd
@@ -10,7 +11,6 @@ load_dotenv()
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 
 # create index if it doesn't exist
-from pinecone import Pinecone, ServerlessSpec
 
 # replace the create_index part with this:
 if "lawlens" not in pc.list_indexes().names():
@@ -37,7 +37,7 @@ print("Embedding BNS sections...")
 for i, row in df.iterrows():
     text = f"{row['title']} {row['description']} {row['keywords']}"
     vector = model.encode(text).tolist()
-    
+
     index.upsert(vectors=[{
         "id": str(row['section_id']),
         "values": vector,
@@ -48,7 +48,7 @@ for i, row in df.iterrows():
             "punishment": str(row['punishment'])
         }
     }])
-    
+
     if i % 50 == 0:
         print(f"Processed {i} sections...")
 

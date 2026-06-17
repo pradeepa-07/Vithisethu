@@ -1,4 +1,4 @@
-# Law Lens - BNS Legal Assistant
+# Vidhisethu - BNS Legal Assistant
 
 A legal assistant powered by AI that helps users search and understand sections of the Bharatiya Nyaya Sanhita (BNS) through a web interface.
 
