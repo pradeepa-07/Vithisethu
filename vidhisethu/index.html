@@ -485,6 +485,7 @@
         <h2 class="panel-title">From "what happened" to a filed FIR — in one pass.</h2>
         <p class="panel-text">Most people don't need a law lecture, they need a document. Describe the incident in your own words and Vidhisethu drafts a <mark>structured FIR-ready statement</mark>: complainant details, a plain-English narration, the applicable BNS sections with punishment, and the nearest police station to file it at — all editable before you print or share it.</p>
         <a class="panel-link" href="app.html">Draft Your FIR →</a>
+        <a class="panel-link" onclick="findNearbyPolice()" style="cursor:pointer; margin-left:12px;">Find Nearest Police Station →</a>
       </div>
       <div class="fir-doc">
         <div class="fir-doc-head">
@@ -540,6 +541,27 @@
     applyTheme(isDark);
   }
   applyTheme(localStorage.getItem('vidhisethu-theme') === 'dark');
+
+  // Find Nearest Police Station function
+  function findNearbyPolice() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                // Use Google Maps search — no API key needed for basic search
+                const url = `https://www.google.com/maps/search/police+station/@${lat},${lng},15z`;
+                window.open(url, '_blank');
+            },
+            () => {
+                // if location denied — open Google Maps general search
+                window.open('https://www.google.com/maps/search/police+station+near+me', '_blank');
+            }
+        );
+    } else {
+        window.open('https://www.google.com/maps/search/police+station', '_blank');
+    }
+  }
 
   // duplicate ticker content for seamless loop if needed (already pre-duplicated above)
 </script>
