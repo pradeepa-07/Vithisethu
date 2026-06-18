@@ -1,6 +1,6 @@
 # ⚖️ Vidhisethu — AI-powered BNS Legal Assistant
 
-An AI-powered Bharatiya Nyaya Sanhita (BNS) Legal Assistant using RAG, Vector Search, and a fully local LLM — no API keys, no rate limits, no internet dependency for AI inference.
+An AI-powered Bharatiya Nyaya Sanhita (BNS) Legal Assistant using RAG, Vector Search, and a fully local LLM — no API keys, no rate limits, no internet dependency.
 
 ## 🚀 Features
 - **AI Assistant** — Describe your situation in plain English, get relevant BNS sections explained simply (with chat history)
@@ -11,7 +11,7 @@ An AI-powered Bharatiya Nyaya Sanhita (BNS) Legal Assistant using RAG, Vector Se
 
 ## 🛠️ Tech Stack
 - **RAG** — Retrieval Augmented Generation pipeline
-- **Pinecone** — Vector Database for semantic search
+- **ChromaDB** — Local vector database for semantic search
 - **Sentence Transformers** — Text embeddings (all-MiniLM-L6-v2)
 - **Ollama (Gemma 2:2b)** — Fully local LLM, zero API cost, runs offline
 - **FastAPI** — Backend REST API
@@ -39,28 +39,25 @@ Download from [ollama.com/download](https://ollama.com/download) and install.
 ollama pull gemma2:2b
 ```
 
-### 5. Get a free Pinecone API key
-Sign up at [pinecone.io](https://pinecone.io) → create an API key (free tier).
-
-### 6. Create `.env` file in the root folder
-### 7. Populate the vector database (one-time setup)
+### 5. Create `.env` file in the root folder
+### 6. Populate the vector database (one-time setup)
 ```bash
-python setup_pinecone.py
+python setup_chromadb.py
 ```
 
-### 8. Run the backend
+### 7. Run the backend
 ```bash
 python -m uvicorn main:app --reload
 ```
 
-### 9. Open the frontend
+### 8. Open the frontend
 Open `index.html` directly in your browser.
 
 
 ## 🏆 Hackathon
 Stack Unknown — DCS & GDG on Campus, SASTRA University, June 2026
 
-**Why this stack is unconventional:** Most AI legal assistants rely entirely on cloud APIs that cost money and have rate limits. Vidhisethu runs its entire LLM inference locally via Ollama — making it free forever, fully offline-capable, and immune to API outages or token exhaustion, while still using Pinecone's cloud vector search for accurate retrieval.
+**Why this stack is unconventional:** Most AI legal assistants rely entirely on cloud APIs that cost money and have rate limits. Vidhisethu runs its entire LLM inference locally via Ollama and its vector search locally via ChromaDB — making it free forever, fully offline-capable, and immune to API outages, rate limits, or token exhaustion, with zero cloud dependency end to end.
 
 ## ⚠️ Disclaimer
 Vidhisethu is an educational legal research tool and does not constitute legal advice. Always consult a qualified legal professional for your specific situation.

@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from pinecone import Pinecone
+import chromadb
 from sentence_transformers import SentenceTransformer
 import ollama
 import pandas as pd
@@ -19,8 +19,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
-index = pc.Index("lawlens")
+chroma_client = chromadb.PersistentClient(path="./chroma_db")
+collection = chroma_client.get_or_create_collection(name="lawlens")
 model = SentenceTransformer('all-MiniLM-L6-v2')
 df = pd.read_excel("bns.xlsx")
 
@@ -53,14 +53,13 @@ def search(query: str):
 
     try:
         query_vector = model.encode(query).tolist()
-        results = index.query(
-            vector=query_vector,
-            top_k=2,
-            include_metadata=True
+        results = collection.query(
+            query_embeddings=[query_vector],
+            n_results=2
         )
 
-        matches = results.get('matches', [])
-        if not matches:
+        metadatas = results.get('metadatas', [[]])[0]
+        if not metadatas:
             return {
                 "query": query,
                 "ai_explanation": "No relevant BNS sections found for your query.",
@@ -69,8 +68,7 @@ def search(query: str):
 
         sections = []
         context = ""
-        for match in matches:
-            meta = match.get('metadata', {})
+        for meta in metadatas:
             sections.append({
                 "section_number": meta.get('section_number', 'N/A'),
                 "title": meta.get('title', 'N/A'),
@@ -118,24 +116,23 @@ def chat(payload: dict):
     try:
         query = messages[-1].get("content", "")
         if not query.strip():
-            raise HTTPException(status_code=400, detail="Last message cannot be empty")
+            raise HTTPException(
+                status_code=400, detail="Last message cannot be empty")
 
         recent_messages = messages[-6:]
 
         query_vector = model.encode(query).tolist()
-        results = index.query(
-            vector=query_vector,
-            top_k=2,
-            include_metadata=True
+        results = collection.query(
+            query_embeddings=[query_vector],
+            n_results=2
         )
 
-        matches = results.get('matches', [])
+        metadatas = results.get('metadatas', [[]])[0]
         sections = []
         context = ""
 
-        if matches:
-            for match in matches:
-                meta = match.get('metadata', {})
+        if metadatas:
+            for meta in metadatas:
                 sections.append({
                     "section_number": meta.get('section_number', 'N/A'),
                     "title": meta.get('title', 'N/A'),
@@ -192,13 +189,15 @@ def get_section(number: int):
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Section lookup failed: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail=f"Section lookup failed: {str(e)}")
 
 
 @app.get("/ipc/{ipc_number}")
 def ipc_lookup(ipc_number: str):
     if ipc_number not in ipc_bns_map:
-        raise HTTPException(status_code=404, detail=f"IPC Section {ipc_number} not found in mapping")
+        raise HTTPException(
+            status_code=404, detail=f"IPC Section {ipc_number} not found in mapping")
 
     mapping = ipc_bns_map[ipc_number]
     bns_num = mapping['bns_section']
@@ -206,7 +205,8 @@ def ipc_lookup(ipc_number: str):
 
     effective_date_msg = f"IPC Section {ipc_number} was changed to BNS Section {bns_num} on July 1, 2024"
 
-    result = df[df['section_number'].astype(str).str.strip() == str(bns_num).strip()]
+    result = df[df['section_number'].astype(
+        str).str.strip() == str(bns_num).strip()]
 
     if result.empty:
         try:
