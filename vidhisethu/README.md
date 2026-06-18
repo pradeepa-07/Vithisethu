@@ -1,100 +1,66 @@
-# Vidhisethu - BNS Legal Assistant
+# ⚖️ Vidhisethu — AI-powered BNS Legal Assistant
 
-A legal assistant powered by AI that helps users search and understand sections of the Bharatiya Nyaya Sanhita (BNS) through a web interface.
+An AI-powered Bharatiya Nyaya Sanhita (BNS) Legal Assistant using RAG, Vector Search, and a fully local LLM — no API keys, no rate limits, no internet dependency for AI inference.
 
-## Features
+## 🚀 Features
+- **AI Assistant** — Describe your situation in plain English, get relevant BNS sections explained simply (with chat history)
+- **Section Lookup** — Enter BNS section number OR old IPC section number to get details
+- **IPC to BNS Mapping** — Shows which BNS section replaced any given IPC section, with effective date
+- **Crisis Detection** — Detects sensitive situations (abuse, threats, self-harm) and shows helplines + nearest police station via Google Maps
+- **Case Library** — Landmark Supreme Court cases simplified
 
-- **Vector Search**: Uses Pinecone for semantic search across BNS sections
-- **AI-Powered Responses**: Leverages Groq API for intelligent legal guidance
-- **FastAPI Backend**: RESTful API for handling search and query requests
-- **Modern UI**: Clean, dark-themed web interface for easy navigation
-- **Semantic Understanding**: Uses sentence transformers for accurate legal section matching
+## 🛠️ Tech Stack
+- **RAG** — Retrieval Augmented Generation pipeline
+- **Pinecone** — Vector Database for semantic search
+- **Sentence Transformers** — Text embeddings (all-MiniLM-L6-v2)
+- **Ollama (Gemma 2:2b)** — Fully local LLM, zero API cost, runs offline
+- **FastAPI** — Backend REST API
+- **Google Maps** — Nearest police station lookup
+- **HTML/CSS/JS** — Frontend
 
-## Tech Stack
+## ⚙️ Setup Instructions
 
-- **Frontend**: HTML/CSS/JavaScript
-- **Backend**: FastAPI (Python)
-- **Vector Database**: Pinecone
-- **AI/LLM**: Groq API
-- **Embeddings**: Sentence Transformers (all-MiniLM-L6-v2)
-- **Data Processing**: Pandas
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd lawlens
-   ```
-
-2. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Set up environment variables:
-   ```bash
-   cp .env.example .env
-   ```
-   Then edit `.env` with your API keys:
-   - `PINECONE_API_KEY`: Your Pinecone API key
-   - `GROQ_API_KEY`: Your Groq API key
-
-5. Prepare the BNS dataset:
-   - Ensure `bns.xlsx` is in the project root directory
-
-6. Initialize Pinecone index:
-   ```bash
-   python setup_pinecone.py
-   ```
-
-## Usage
-
-1. Start the backend server:
-   ```bash
-   uvicorn main:app --reload
-   ```
-
-2. Open `index.html` in your browser or serve it with a local server:
-   ```bash
-   python -m http.server 8000
-   ```
-
-3. Use the web interface to search for BNS sections and get legal guidance
-
-## Project Structure
-
-```
-lawlens/
-├── index.html              # Frontend interface
-├── main.py                 # FastAPI backend application
-├── setup_pinecone.py       # Pinecone index initialization script
-├── bns.xlsx                # BNS dataset
-├── requirements.txt        # Python dependencies
-├── .env.example            # Example environment variables
-├── .gitignore              # Git ignore rules
-└── README.md               # This file
+### 1. Clone the repo
+```bash
+git clone https://github.com/pradeepa-07/Vithisethu.git
+cd Vithisethu
 ```
 
-## API Endpoints
+### 2. Install Python dependencies
+```bash
+pip install -r requirements.txt
+```
 
-- `GET /` - Health check
-- `GET /search?query=<query>` - Search for relevant BNS sections
+### 3. Install Ollama (one-time, like installing Python)
+Download from [ollama.com/download](https://ollama.com/download) and install.
 
-## Contributing
+### 4. Pull the AI model (one-time, ~1.6GB)
+```bash
+ollama pull gemma2:2b
+```
 
-Contributions are welcome! Please feel free to submit a pull request.
+### 5. Get a free Pinecone API key
+Sign up at [pinecone.io](https://pinecone.io) → create an API key (free tier).
 
-## License
+### 6. Create `.env` file in the root folder
+### 7. Populate the vector database (one-time setup)
+```bash
+python setup_pinecone.py
+```
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### 8. Run the backend
+```bash
+python -m uvicorn main:app --reload
+```
 
-## Disclaimer
+### 9. Open the frontend
+Open `index.html` directly in your browser.
 
-This tool is for informational purposes only and should not be considered as legal advice. Always consult with a qualified legal professional for legal matters.
+
+## 🏆 Hackathon
+Stack Unknown — DCS & GDG on Campus, SASTRA University, June 2026
+
+**Why this stack is unconventional:** Most AI legal assistants rely entirely on cloud APIs that cost money and have rate limits. Vidhisethu runs its entire LLM inference locally via Ollama — making it free forever, fully offline-capable, and immune to API outages or token exhaustion, while still using Pinecone's cloud vector search for accurate retrieval.
+
+## ⚠️ Disclaimer
+Vidhisethu is an educational legal research tool and does not constitute legal advice. Always consult a qualified legal professional for your specific situation.
