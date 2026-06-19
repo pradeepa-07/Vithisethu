@@ -631,7 +631,7 @@
         document.getElementById('sectionResults').innerHTML = '';
 
         const isIPC = input.toUpperCase().includes('IPC');
-        const number = input.replace(/IPC/gi, '').trim();
+const number = input.replace(/IPC/gi, '').replace(/BNS/gi, '').trim();
 
         try {
             if (isIPC) {

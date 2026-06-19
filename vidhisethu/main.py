@@ -46,6 +46,34 @@ def home():
     return {"message": "Vidhisethu API is running 🚀"}
 
 
+SYSTEM_RULES = """Rules:
+- Mention section numbers and explain what they mean in simple terms
+- Do NOT add disclaimers about not being able to give legal advice
+- Do NOT repeat "consult a lawyer" multiple times - say it once at most, briefly, only at the very end if needed
+- NEVER mention "Indian Penal Code" or "IPC" unless the user specifically asks about IPC. Only discuss BNS (Bharatiya Nyaya Sanhita)
+- Focus on explaining the law clearly and directly
+- Be concise"""
+
+
+def build_sections_and_context(metadatas):
+    """Deduplicate sections and build context string."""
+    seen_sections = set()
+    sections = []
+    context = ""
+    for meta in metadatas:
+        sec_num = meta.get('section_number', 'N/A')
+        if sec_num in seen_sections:
+            continue
+        seen_sections.add(sec_num)
+        sections.append({
+            "section_number": sec_num,
+            "title": meta.get('title', 'N/A'),
+            "punishment": meta.get('punishment', 'N/A')
+        })
+        context += f"Section {sec_num}: {meta.get('title')}\n{meta.get('description')}\n\n"
+    return sections, context
+
+
 @app.get("/search")
 def search(query: str):
     if not query.strip():
@@ -55,7 +83,7 @@ def search(query: str):
         query_vector = model.encode(query).tolist()
         results = collection.query(
             query_embeddings=[query_vector],
-            n_results=2
+            n_results=3
         )
 
         metadatas = results.get('metadatas', [[]])[0]
@@ -66,34 +94,26 @@ def search(query: str):
                 "relevant_sections": []
             }
 
-        sections = []
-        context = ""
-        for meta in metadatas:
-            sections.append({
-                "section_number": meta.get('section_number', 'N/A'),
-                "title": meta.get('title', 'N/A'),
-                "punishment": meta.get('punishment', 'N/A')
-            })
-            context += f"Section {meta.get('section_number')}: {meta.get('title')}\n{meta.get('description')}\n\n"
+        sections, context = build_sections_and_context(metadatas)
 
         response = ollama.chat(
             model=OLLAMA_MODEL,
             messages=[
                 {
                     "role": "system",
-                    "content": f"""You are a BNS legal assistant. The user asked: '{query}'
+                    "content": f"""You are a legal assistant for India's Bharatiya Nyaya Sanhita (BNS) - India's criminal code that replaced the Indian Penal Code (IPC) in 2024. The user asked: '{query}'
 
 You MUST reference these specific BNS sections in your answer:
 {context}
 
-Always mention the section numbers and explain what they mean. Be concise."""
+{SYSTEM_RULES}"""
                 },
                 {
                     "role": "user",
                     "content": query
                 }
             ],
-            options={"num_predict": 250}
+            options={"num_predict": 280}
         )
 
         return {
@@ -124,30 +144,20 @@ def chat(payload: dict):
         query_vector = model.encode(query).tolist()
         results = collection.query(
             query_embeddings=[query_vector],
-            n_results=2
+            n_results=3
         )
 
         metadatas = results.get('metadatas', [[]])[0]
-        sections = []
-        context = ""
-
-        if metadatas:
-            for meta in metadatas:
-                sections.append({
-                    "section_number": meta.get('section_number', 'N/A'),
-                    "title": meta.get('title', 'N/A'),
-                    "punishment": meta.get('punishment', 'N/A')
-                })
-                context += f"Section {meta.get('section_number')}: {meta.get('title')}\n{meta.get('description')}\n\n"
+        sections, context = build_sections_and_context(metadatas) if metadatas else ([], "")
 
         system_prompt = {
             "role": "system",
-            "content": f"""You are a BNS legal assistant. The user just asked: '{query}'
+            "content": f"""You are a legal assistant for India's Bharatiya Nyaya Sanhita (BNS) - India's criminal code that replaced the Indian Penal Code (IPC) in 2024. The user just asked: '{query}'
 
 You MUST reference these specific BNS sections in your answer:
 {context if context else 'None found - use conversation context only.'}
 
-Always mention the section numbers and explain what they mean. Be concise."""
+{SYSTEM_RULES}"""
         }
 
         ollama_messages = [system_prompt] + recent_messages
@@ -155,7 +165,7 @@ Always mention the section numbers and explain what they mean. Be concise."""
         response = ollama.chat(
             model=OLLAMA_MODEL,
             messages=ollama_messages,
-            options={"num_predict": 250}
+            options={"num_predict": 280}
         )
 
         return {
