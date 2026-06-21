@@ -6,6 +6,7 @@
 <title>Vidhisethu — AI-powered Bharatiya Nyaya Sanhita Legal Assistant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="i18n.js"></script>
 <style>
   :root{
     --paper:#fafaf8;
@@ -351,6 +352,47 @@
   .foot-note{ color:var(--grey); font-size:.82rem; margin-top:18px; }
 
   section{ padding-left:0; }
+
+  /* ---------- LANGUAGE SWITCHER ---------- */
+  .lang-switch{ position:relative; flex-shrink:0; }
+  .lang-switch-btn{
+    display:flex; align-items:center; gap:6px;
+    height:38px; padding:0 14px;
+    border-radius:var(--radius-pill);
+    border:1px solid var(--grey-line);
+    background:var(--paper-raised);
+    color:var(--ink);
+    font-family:'Inter',sans-serif; font-size:.85rem; font-weight:500;
+    cursor:pointer; white-space:nowrap;
+    transition:all .2s ease;
+  }
+  .lang-switch-btn:hover{ border-color:var(--ink); }
+  .lang-switch-menu{
+    display:none;
+    position:absolute; top:calc(100% + 8px); right:0;
+    min-width:190px; max-height:320px; overflow-y:auto;
+    background:var(--paper-raised);
+    border:1px solid var(--grey-line);
+    border-radius:14px;
+    padding:6px;
+    box-shadow:0 18px 40px -20px rgba(0,0,0,.3);
+    z-index:60;
+  }
+  .lang-switch-menu.open{ display:block; }
+  .lang-switch-item{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    width:100%; padding:9px 12px; border-radius:9px;
+    border:none; background:transparent; color:var(--ink);
+    font-family:'Inter',sans-serif; font-size:.88rem;
+    cursor:pointer; text-align:left;
+  }
+  .lang-switch-item:hover{ background:var(--bg-hover, var(--grey-line-soft)); }
+  .lang-switch-item.active{ background:var(--accent-soft); color:var(--accent); font-weight:600; }
+  .lang-switch-item .lang-en{ color:var(--grey); font-size:.76rem; }
+  .lang-switch-item.active .lang-en{ color:var(--accent); opacity:.75; }
+  @media (max-width: 880px){
+    .lang-switch-btn span:not(#langSwitchLabel){ display:none; }
+  }
 </style>
 </head>
 <body>
@@ -359,16 +401,17 @@
   <nav>
     <div class="brand">Vidhisethu<span class="dot">.</span></div>
     <div class="nav-links">
-      <a href="#platform">Platform</a>
-      <a href="#coverage">Coverage</a>
-      <a href="#fir">FIR Draft</a>
-      <a href="app.html">Open App</a>
+      <a href="#platform" data-i18n="nav_platform">Platform</a>
+      <a href="#coverage" data-i18n="nav_coverage">Coverage</a>
+      <a href="#fir" data-i18n="nav_fir">FIR Draft</a>
+      <a href="app.html" data-i18n="nav_open_app">Open App</a>
     </div>
     <div class="nav-right">
       <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
         <svg id="themeIcon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
       </button>
-      <button class="btn-dark" onclick="window.location.href='app.html'">Try Web App</button>
+      <div id="langSwitchContainer"></div>
+      <button class="btn-dark" data-i18n="nav_try_app" onclick="window.location.href='app.html'">Try Web App</button>
     </div>
   </nav>
 </div>
@@ -377,69 +420,69 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Find the section.<em>Not just the statute.</em></h1>
-    <p class="hero-sub">Vidhisethu reads your situation the way a junior advocate would — then hands you the exact Bharatiya Nyaya Sanhita sections, the IPC mapping, and the precedent behind them.</p>
+    <h1><span data-i18n="hero_title_line1">Find the section.</span><em data-i18n="hero_title_line2">Not just the statute.</em></h1>
+    <p class="hero-sub" data-i18n="hero_sub">Vidhisethu reads your situation the way a junior advocate would — then hands you the exact Bharatiya Nyaya Sanhita sections, the IPC mapping, and the precedent behind them.</p>
 
     <div class="tagline-marquee">
       <div class="tagline-marquee-track">
-        <span>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
-        <span>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
-        <span>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
-        <span>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
+        <span data-i18n="tagline_marquee">AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
+        <span data-i18n="tagline_marquee">AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
+        <span data-i18n="tagline_marquee">AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
+        <span data-i18n="tagline_marquee">AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
       </div>
     </div>
 
     <div class="search-mock">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      <input type="text" value="My landlord won't return my security deposit." readonly>
-      <button onclick="window.location.href='app.html'">Try Search</button>
+      <input type="text" data-i18n-value="search_placeholder" value="My landlord won't return my security deposit." readonly>
+      <button data-i18n="btn_try_search" onclick="window.location.href='app.html'">Try Search</button>
     </div>
 
     <div class="hero-ctas">
-      <button class="pill-btn" onclick="window.location.href='app.html'">Go to AI Assistant</button>
-      <button class="pill-btn solid" onclick="document.getElementById('fir').scrollIntoView({behavior:'smooth'})">Draft an FIR<small>New · Free</small></button>
+      <button class="pill-btn" data-i18n="btn_go_ai" onclick="window.location.href='app.html'">Go to AI Assistant</button>
+      <button class="pill-btn solid" onclick="document.getElementById('fir').scrollIntoView({behavior:'smooth'})"><span data-i18n="btn_draft_fir">Draft an FIR</span><small data-i18n="badge_new_free">New · Free</small></button>
     </div>
   </section>
 
   <!-- TICKER -->
   <div class="ticker-eyebrow">
-    <span class="eyebrow">Mapped against the Bharatiya Nyaya Sanhita, the Bharatiya Nagarik Suraksha Sanhita, and the repealed IPC</span>
+    <span class="eyebrow" data-i18n="ticker_eyebrow">Mapped against the Bharatiya Nyaya Sanhita, the Bharatiya Nagarik Suraksha Sanhita, and the repealed IPC</span>
   </div>
   <div class="ticker-wrap">
     <div class="ticker-track" id="tickerTrack">
-      <span>Bharatiya Nyaya Sanhita, 2023</span>
-      <span>Indian Penal Code, 1860</span>
-      <span>Bharatiya Nagarik Suraksha Sanhita</span>
-      <span>Bharatiya Sakshya Adhiniyam</span>
-      <span>358 BNS Sections Indexed</span>
-      <span>Bharatiya Nyaya Sanhita, 2023</span>
-      <span>Indian Penal Code, 1860</span>
-      <span>Bharatiya Nagarik Suraksha Sanhita</span>
-      <span>Bharatiya Sakshya Adhiniyam</span>
-      <span>358 BNS Sections Indexed</span>
+      <span data-i18n="ticker_bns">Bharatiya Nyaya Sanhita, 2023</span>
+      <span data-i18n="ticker_ipc">Indian Penal Code, 1860</span>
+      <span data-i18n="ticker_bnss">Bharatiya Nagarik Suraksha Sanhita</span>
+      <span data-i18n="ticker_bsa">Bharatiya Sakshya Adhiniyam</span>
+      <span data-i18n="ticker_count">358 BNS Sections Indexed</span>
+      <span data-i18n="ticker_bns">Bharatiya Nyaya Sanhita, 2023</span>
+      <span data-i18n="ticker_ipc">Indian Penal Code, 1860</span>
+      <span data-i18n="ticker_bnss">Bharatiya Nagarik Suraksha Sanhita</span>
+      <span data-i18n="ticker_bsa">Bharatiya Sakshya Adhiniyam</span>
+      <span data-i18n="ticker_count">358 BNS Sections Indexed</span>
     </div>
   </div>
 
   <!-- STATEMENT -->
   <div class="statement">
-    <div class="line1">Stop memorising section numbers.</div>
-    <div class="line2">Start describing what happened.</div>
+    <div class="line1" data-i18n="statement_line1">Stop memorising section numbers.</div>
+    <div class="line2" data-i18n="statement_line2">Start describing what happened.</div>
   </div>
 
   <!-- STATS SPLIT -->
   <section class="split" id="platform">
     <div>
-      <h2 class="panel-title">Built on the statute, not the internet.</h2>
-      <p class="panel-text">General-purpose chatbots blend old IPC sections with the new code and quietly get the punishment wrong. Vidhisethu's retrieval layer is grounded <mark>only in the BNS section text and its official IPC mapping</mark>, so the section number it gives you is the section number a court will recognise.</p>
-      <a class="panel-link" href="app.html">Try Section Lookup →</a>
+      <h2 class="panel-title" data-i18n="platform_title">Built on the statute, not the internet.</h2>
+      <p class="panel-text" data-i18n-html="platform_text_html">General-purpose chatbots blend old IPC sections with the new code and quietly get the punishment wrong. Vidhisethu's retrieval layer is grounded <mark>only in the BNS section text and its official IPC mapping</mark>, so the section number it gives you is the section number a court will recognise.</p>
+      <a class="panel-link" href="app.html" data-i18n="platform_link">Try Section Lookup →</a>
     </div>
     <div class="stat-card">
-      <span class="eyebrow">Section match accuracy</span>
+      <span class="eyebrow" data-i18n="stat_eyebrow">Section match accuracy</span>
       <div class="stat-big">96<sup>%</sup></div>
-      <div class="stat-verify">Verified against the official IPC → BNS mapping table</div>
+      <div class="stat-verify" data-i18n="stat_verify">Verified against the official IPC → BNS mapping table</div>
       <div class="stat-compare">
-        <div><span>Generic chatbot</span><b>61%</b></div>
-        <div><span>Keyword search</span><b>44%</b></div>
+        <div><span data-i18n="stat_generic">Generic chatbot</span><b>61%</b></div>
+        <div><span data-i18n="stat_keyword">Keyword search</span><b>44%</b></div>
       </div>
     </div>
   </section>
@@ -447,31 +490,31 @@
   <!-- IPC -> BNS SPLIT -->
   <section class="split reverse" id="coverage">
     <div>
-      <h2 class="panel-title">Still searching IPC 302?</h2>
-      <p class="panel-text">Millions of FIRs, judgments, and textbooks still cite the old IPC. Type the IPC number you know, and Vidhisethu surfaces <mark>the exact BNS section that replaced it</mark>, side by side with what changed in punishment or scope.</p>
-      <a class="panel-link" href="app.html">Try IPC → BNS Mapping →</a>
+      <h2 class="panel-title" data-i18n="coverage_title">Still searching IPC 302?</h2>
+      <p class="panel-text" data-i18n-html="coverage_text_html">Millions of FIRs, judgments, and textbooks still cite the old IPC. Type the IPC number you know, and Vidhisethu surfaces <mark>the exact BNS section that replaced it</mark>, side by side with what changed in punishment or scope.</p>
+      <a class="panel-link" href="app.html" data-i18n="coverage_link">Try IPC → BNS Mapping →</a>
     </div>
     <div class="extract-card">
-      <span class="eyebrow">[ IPC → BNS MAPPING ]</span>
-      IPC Section 302 — Murder<br>
-      <span style="color:var(--grey)">Punishable with death, or imprisonment for life, and fine.</span>
-      <div class="handwritten">→ Replaced by BNS Section 103.<br>Same punishment retained, renumbered under Chapter VI.</div>
+      <span class="eyebrow" data-i18n="extract_eyebrow">[ IPC → BNS MAPPING ]</span>
+      <span data-i18n="extract_ipc302">IPC Section 302 — Murder</span><br>
+      <span style="color:var(--grey)" data-i18n="extract_ipc302_desc">Punishable with death, or imprisonment for life, and fine.</span>
+      <div class="handwritten"><span data-i18n="extract_replaced">→ Replaced by BNS Section 103.</span><br><span data-i18n="extract_replaced2">Same punishment retained, renumbered under Chapter VI.</span></div>
     </div>
   </section>
 
   <!-- TRANSLATION-style card, repurposed as Case Library -->
   <section class="split" id="cases">
     <div>
-      <h2 class="panel-title">Precedent, not just provisions.</h2>
-      <p class="panel-text">A section number alone rarely settles a real dispute. Vidhisethu pairs every relevant section with <mark>landmark Supreme Court rulings</mark> that show how it has actually been applied — Lalita Kumari on FIR registration, Arnesh Kumar on arrest guidelines, and more.</p>
-      <a class="panel-link" href="app.html">Browse Case Library →</a>
+      <h2 class="panel-title" data-i18n="cases_title">Precedent, not just provisions.</h2>
+      <p class="panel-text" data-i18n-html="cases_text_html">A section number alone rarely settles a real dispute. Vidhisethu pairs every relevant section with <mark>landmark Supreme Court rulings</mark> that show how it has actually been applied — Lalita Kumari on FIR registration, Arnesh Kumar on arrest guidelines, and more.</p>
+      <a class="panel-link" href="app.html" data-i18n="cases_link">Browse Case Library →</a>
     </div>
     <div class="translate-card">
       <div class="bg-script"><span>निर्णय</span><span>判決</span></div>
       <div class="inner">
-        <span class="pulse-dot"></span><span class="eyebrow" style="display:inline">CASE MATCHED</span>
-        <h3>Lalita Kumari<br>vs. Govt. of UP</h3>
-        <p>FIR registration is mandatory for cognizable offences — cited for BNS Section 173.</p>
+        <span class="pulse-dot"></span><span class="eyebrow" style="display:inline" data-i18n="case_matched">CASE MATCHED</span>
+        <h3 data-i18n="case_lalita_title">Lalita Kumari<br>vs. Govt. of UP</h3>
+        <p data-i18n="case_lalita_desc">FIR registration is mandatory for cognizable offences — cited for BNS Section 173.</p>
       </div>
     </div>
   </section>
@@ -480,34 +523,34 @@
   <section class="fir-section" id="fir">
     <div class="fir-grid">
       <div>
-        <span class="fir-badge">● New on Vidhisethu</span>
-        <h2 class="panel-title">From "what happened" to a filed FIR — in one pass.</h2>
-        <p class="panel-text">Most people don't need a law lecture, they need a document. Describe the incident in your own words and Vidhisethu drafts a <mark>structured FIR-ready statement</mark>: complainant details, a plain-English narration, the applicable BNS sections with punishment, and the nearest police station to file it at — all editable before you print or share it.</p>
-        <a class="panel-link" href="app.html">Draft Your FIR →</a>
-        <a class="panel-link" onclick="findNearbyPolice()" style="cursor:pointer; margin-left:12px;">Find Nearest Police Station →</a>
+        <span class="fir-badge" data-i18n="fir_badge">● New on Vidhisethu</span>
+        <h2 class="panel-title" data-i18n="fir_title">From "what happened" to a filed FIR — in one pass.</h2>
+        <p class="panel-text" data-i18n-html="fir_text_html">Most people don't need a law lecture, they need a document. Describe the incident in your own words and Vidhisethu drafts a <mark>structured FIR-ready statement</mark>: complainant details, a plain-English narration, the applicable BNS sections with punishment, and the nearest police station to file it at — all editable before you print or share it.</p>
+        <a class="panel-link" href="app.html" data-i18n="fir_link_draft">Draft Your FIR →</a>
+        <a class="panel-link" onclick="findNearbyPolice()" style="cursor:pointer; margin-left:12px;" data-i18n="fir_link_police">Find Nearest Police Station →</a>
       </div>
       <div class="fir-doc">
         <div class="fir-doc-head">
-          <h4>FIR Draft Preview</h4>
-          <span>AUTO-GENERATED</span>
+          <h4 data-i18n="fir_doc_head">FIR Draft Preview</h4>
+          <span data-i18n="fir_doc_auto">AUTO-GENERATED</span>
         </div>
-        <div class="fir-row"><span class="k">Nature of complaint</span><span class="v">Theft of two-wheeler</span></div>
-        <div class="fir-row"><span class="k">Date &amp; time of incident</span><span class="v">14 June 2026, ~9:40 PM</span></div>
-        <div class="fir-row"><span class="k">Place of occurrence</span><span class="v">Outside residence, Pollachi</span></div>
-        <div class="fir-row"><span class="k">Applicable section</span><span class="v">BNS 303(2)<span class="fir-tag">Theft</span></span></div>
-        <div class="fir-row"><span class="k">Suggested station</span><span class="v">Nearest jurisdiction, auto-located</span></div>
-        <div class="fir-row"><span class="k">Status</span><span class="v">Ready to review</span></div>
+        <div class="fir-row"><span class="k" data-i18n="fir_row_nature">Nature of complaint</span><span class="v" data-i18n="fir_row_nature_v">Theft of two-wheeler</span></div>
+        <div class="fir-row"><span class="k" data-i18n="fir_row_datetime">Date &amp; time of incident</span><span class="v" data-i18n="fir_row_datetime_v">14 June 2026, ~9:40 PM</span></div>
+        <div class="fir-row"><span class="k" data-i18n="fir_row_place">Place of occurrence</span><span class="v" data-i18n="fir_row_place_v">Outside residence, Pollachi</span></div>
+        <div class="fir-row"><span class="k" data-i18n="fir_row_section">Applicable section</span><span class="v">BNS 303(2)<span class="fir-tag" data-i18n="fir_row_section_tag">Theft</span></span></div>
+        <div class="fir-row"><span class="k" data-i18n="fir_row_station">Suggested station</span><span class="v" data-i18n="fir_row_station_v">Nearest jurisdiction, auto-located</span></div>
+        <div class="fir-row"><span class="k" data-i18n="fir_row_status">Status</span><span class="v" data-i18n="fir_row_status_v">Ready to review</span></div>
       </div>
     </div>
   </section>
 
   <!-- CTA BAND -->
   <div class="cta-band">
-    <h2>Your case doesn't wait<br>for office hours.</h2>
-    <p>Ask Vidhisethu in plain English, Tamil, or Hindi — it reads the situation and points to the law.</p>
+    <h2><span data-i18n="cta_title1">Your case doesn't wait</span><br><span data-i18n="cta_title2">for office hours.</span></h2>
+    <p data-i18n="cta_text">Ask Vidhisethu in plain English, Tamil, or Hindi — it reads the situation and points to the law.</p>
     <div class="hero-ctas">
-      <button class="pill-btn solid" onclick="window.location.href='app.html'">Open the AI Assistant</button>
-      <button class="pill-btn" onclick="document.getElementById('fir').scrollIntoView({behavior:'smooth'})">Draft an FIR</button>
+      <button class="pill-btn solid" data-i18n="cta_btn_open" onclick="window.location.href='app.html'">Open the AI Assistant</button>
+      <button class="pill-btn" data-i18n="cta_btn_fir" onclick="document.getElementById('fir').scrollIntoView({behavior:'smooth'})">Draft an FIR</button>
     </div>
   </div>
 
@@ -515,13 +558,13 @@
     <div class="foot-grid">
       <div class="foot-brand">Vidhisethu<span style="color:var(--accent)">.</span></div>
       <div class="foot-links">
-        <a href="app.html">AI Assistant</a>
-        <a href="app.html">Section Lookup</a>
-        <a href="app.html">Case Library</a>
-        <a href="app.html">About</a>
+        <a href="app.html" data-i18n="foot_ai">AI Assistant</a>
+        <a href="app.html" data-i18n="foot_section">Section Lookup</a>
+        <a href="app.html" data-i18n="foot_cases">Case Library</a>
+        <a href="app.html" data-i18n="foot_about">About</a>
       </div>
     </div>
-    <p class="foot-note">Vidhisethu is an educational legal research tool and does not constitute legal advice. Always consult a qualified advocate for your specific situation.</p>
+    <p class="foot-note" data-i18n="foot_note">Vidhisethu is an educational legal research tool and does not constitute legal advice. Always consult a qualified advocate for your specific situation.</p>
   </footer>
 
 </div>
@@ -561,6 +604,10 @@
         window.open('https://www.google.com/maps/search/police+station', '_blank');
     }
   }
+
+  // Language switcher init + apply translations
+  initLanguageSwitcher(document.getElementById('langSwitchContainer'));
+  applyTranslations();
 
   // duplicate ticker content for seamless loop if needed (already pre-duplicated above)
 </script>

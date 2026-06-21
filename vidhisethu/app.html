@@ -6,6 +6,7 @@
     <title>Vidhisethu - BNS Legal Assistant</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="i18n.js"></script>
     <style>
         :root {
             --bg-primary: #fafaf8;
@@ -300,27 +301,66 @@
         .bns-replacement h4 { color: #2e7d32; margin-bottom: 8px; }
         .bns-replacement p { color: #444; font-size: 0.9rem; line-height: 1.7; }
         body.dark-mode .bns-replacement p { color: #ccc; }
+
+        /* ---------- LANGUAGE SWITCHER ---------- */
+        .lang-switch{ position:relative; flex:1; min-width:150px; display:flex; justify-content:center; }
+        .lang-switch-btn{
+            display:flex; align-items:center; justify-content:center; gap:6px;
+            width:100%; height:100%; padding:14px 16px;
+            border-radius:999px;
+            border:none;
+            background:transparent;
+            color:var(--text-secondary);
+            font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:500;
+            cursor:pointer; white-space:nowrap;
+            transition:all 0.3s ease;
+        }
+        .lang-switch-btn:hover{ background:var(--bg-hover); color:var(--text-primary); }
+        .lang-switch-menu{
+            display:none;
+            position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%);
+            min-width:200px; max-height:340px; overflow-y:auto;
+            background:var(--bg-secondary);
+            border:1px solid var(--border-color);
+            border-radius:14px;
+            padding:6px;
+            box-shadow:0 18px 40px -20px rgba(0,0,0,.3);
+            z-index:60;
+        }
+        .lang-switch-menu.open{ display:block; }
+        .lang-switch-item{
+            display:flex; align-items:center; justify-content:space-between; gap:10px;
+            width:100%; padding:10px 12px; border-radius:9px;
+            border:none; background:transparent; color:var(--text-primary);
+            font-family:'Inter',sans-serif; font-size:0.9rem;
+            cursor:pointer; text-align:left;
+        }
+        .lang-switch-item:hover{ background:var(--bg-hover); }
+        .lang-switch-item.active{ background:var(--bg-active); color:var(--accent); font-weight:600; }
+        .lang-switch-item .lang-en{ color:var(--text-secondary); font-size:0.78rem; }
+        .lang-switch-item.active .lang-en{ color:var(--accent); opacity:.75; }
     </style>
 </head>
 <body>
 
 <nav>
-    <button onclick="window.location.href='index.html'" style="flex:0.7; min-width:90px;">← Home</button>
-    <button class="active" onclick="showPage('ai')">AI Assistant</button>
-    <button onclick="showPage('section')">Section Lookup</button>
-    <button onclick="showPage('cases')">Case Library</button>
-    <button onclick="showPage('about')">About</button>
-    <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+    <button onclick="window.location.href='index.html'" style="flex:0.7; min-width:90px;" data-i18n="nav_home">← Home</button>
+    <button class="active" onclick="showPage('ai')" data-i18n="nav_ai">AI Assistant</button>
+    <button onclick="showPage('section')" data-i18n="nav_section">Section Lookup</button>
+    <button onclick="showPage('cases')" data-i18n="nav_cases">Case Library</button>
+    <button onclick="showPage('about')" data-i18n="nav_about">About</button>
+    <div id="langSwitchContainer"></div>
+    <button class="theme-toggle" onclick="toggleTheme()" data-i18n="nav_dark">Dark Mode</button>
 </nav>
 
 <header>
     <h1>Vidhisethu</h1>
     <div class="tagline-marquee">
         <div class="tagline-marquee-track">
-            <span>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
-            <span>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
-            <span>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
-            <span>AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
+            <span data-i18n="app_tagline">AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
+            <span data-i18n="app_tagline">AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
+            <span data-i18n="app_tagline">AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
+            <span data-i18n="app_tagline">AI-powered Bharatiya Nyaya Sanhita Legal Assistant</span>
         </div>
     </div>
 </header>
@@ -333,36 +373,36 @@
 
     <!-- Crisis Banner — only shows for crisis keywords -->
     <div class="crisis-banner" id="crisisBanner">
-        <h4>🚨 We noticed your message may involve a serious situation</h4>
-        <p>If you or someone you know is in danger or distress, please reach out immediately:</p>
+        <h4 data-i18n="crisis_title">🚨 We noticed your message may involve a serious situation</h4>
+        <p data-i18n="crisis_sub">If you or someone you know is in danger or distress, please reach out immediately:</p>
         <div class="helplines">
             <div class="helpline-item">
-                <span class="helpline-name">Police Emergency</span>
+                <span class="helpline-name" data-i18n="crisis_police">Police Emergency</span>
                 <span class="helpline-number">📞 100</span>
             </div>
             <div class="helpline-item">
-                <span class="helpline-name">Women Helpline</span>
+                <span class="helpline-name" data-i18n="crisis_women">Women Helpline</span>
                 <span class="helpline-number">📞 1091</span>
             </div>
             <div class="helpline-item">
-                <span class="helpline-name">Child Helpline (CHILDLINE)</span>
+                <span class="helpline-name" data-i18n="crisis_child">Child Helpline (CHILDLINE)</span>
                 <span class="helpline-number">📞 1098</span>
             </div>
             <div class="helpline-item">
-                <span class="helpline-name">Mental Health (iCall)</span>
+                <span class="helpline-name" data-i18n="crisis_mental">Mental Health (iCall)</span>
                 <span class="helpline-number">📞 9152987821</span>
             </div>
             <div class="helpline-item">
-                <span class="helpline-name">Vandrevala Foundation</span>
+                <span class="helpline-name" data-i18n="crisis_vandrevala">Vandrevala Foundation</span>
                 <span class="helpline-number">📞 1860-2662-345</span>
             </div>
             <div class="helpline-item">
-                <span class="helpline-name">Domestic Violence</span>
+                <span class="helpline-name" data-i18n="crisis_domestic">Domestic Violence</span>
                 <span class="helpline-number">📞 181</span>
             </div>
         </div>
         <!-- Police button only inside crisis banner -->
-        <button class="police-btn" onclick="findNearbyPolice()">
+        <button class="police-btn" onclick="findNearbyPolice()" data-i18n="crisis_find_police">
             📍 Find Nearest Police Station
         </button>
     </div>
@@ -370,26 +410,26 @@
     <div id="chatBox"></div>
 
     <div class="send-row">
-        <input type="text" id="aiQuery" placeholder="Ask a legal question..." />
-        <button class="primary" onclick="searchAI()">Send</button>
+        <input type="text" id="aiQuery" data-i18n-placeholder="ai_input_placeholder" placeholder="Ask a legal question..." />
+        <button class="primary" onclick="searchAI()" data-i18n="btn_send">Send</button>
     </div>
 
     <div style="margin-bottom:12px;">
-        <span class="chip" onclick="fillAI('someone attacked me on the street')">Someone attacked me</span>
-        <span class="chip" onclick="fillAI('my neighbour stole my property')">Theft by neighbour</span>
-        <span class="chip" onclick="fillAI('someone is threatening me online')">Online threat</span>
-        <span class="chip" onclick="clearChat()">🗑 Clear Chat</span>
+        <span class="chip" data-i18n="chip_attack" data-fill-key="chip_attack" onclick="fillAI(t('chip_attack'))">Someone attacked me</span>
+        <span class="chip" data-i18n="chip_theft" data-fill-key="chip_theft" onclick="fillAI(t('chip_theft'))">Theft by neighbour</span>
+        <span class="chip" data-i18n="chip_threat" data-fill-key="chip_threat" onclick="fillAI(t('chip_threat'))">Online threat</span>
+        <span class="chip" data-i18n="chip_clear" onclick="clearChat()">🗑 Clear Chat</span>
     </div>
 
-    <div class="loading" id="aiLoading">Analyzing BNS sections...</div>
+    <div class="loading" id="aiLoading" data-i18n="ai_loading">Analyzing BNS sections...</div>
     <div id="sectionCards" style="margin-top:12px;"></div>
 </div>
 
 <!-- PAGE 2: Section Lookup -->
 <div class="page" id="page-section">
-    <input type="text" id="sectionNumber" placeholder="Enter BNS 303 or IPC 302 or IPC 498A..." />
-    <button class="primary" onclick="lookupSection()">Lookup Section</button>
-    <div class="loading" id="sectionLoading">Fetching section...</div>
+    <input type="text" id="sectionNumber" data-i18n-placeholder="section_placeholder" placeholder="Enter BNS 303 or IPC 302 or IPC 498A..." />
+    <button class="primary" onclick="lookupSection()" data-i18n="btn_lookup">Lookup Section</button>
+    <div class="loading" id="sectionLoading" data-i18n="section_loading">Fetching section...</div>
     <div id="sectionResults"></div>
 </div>
 
@@ -401,29 +441,29 @@
 <!-- PAGE 4: About -->
 <div class="page" id="page-about">
     <div class="card">
-        <h3>About Vidhisethu</h3>
-        <p>Vidhisethu is an AI-powered legal assistant designed to help users understand the Bharatiya Nyaya Sanhita (BNS) - India's criminal law code.</p>
+        <h3 data-i18n="about_h1">About Vidhisethu</h3>
+        <p data-i18n="about_p1">Vidhisethu is an AI-powered legal assistant designed to help users understand the Bharatiya Nyaya Sanhita (BNS) - India's criminal law code.</p>
     </div>
     <div class="card">
-        <h3>What We Do</h3>
-        <p>We provide a comprehensive platform for legal research with three main features:</p>
+        <h3 data-i18n="about_h2">What We Do</h3>
+        <p data-i18n="about_p2">We provide a comprehensive platform for legal research with three main features:</p>
         <ul style="margin-left: 20px; margin-top: 12px; color: var(--text-tertiary); line-height: 1.8;">
-            <li><strong>AI Assistant:</strong> Describe your legal situation and get relevant BNS sections with AI-powered explanations</li>
-            <li><strong>Section Lookup:</strong> Search BNS sections or enter old IPC sections to find their BNS equivalent</li>
-            <li><strong>Case Library:</strong> Explore landmark legal cases and judicial precedents</li>
+            <li><strong data-i18n="about_li1_title">AI Assistant:</strong> <span data-i18n="about_li1">Describe your legal situation and get relevant BNS sections with AI-powered explanations</span></li>
+            <li><strong data-i18n="about_li2_title">Section Lookup:</strong> <span data-i18n="about_li2">Search BNS sections or enter old IPC sections to find their BNS equivalent</span></li>
+            <li><strong data-i18n="about_li3_title">Case Library:</strong> <span data-i18n="about_li3">Explore landmark legal cases and judicial precedents</span></li>
         </ul>
     </div>
     <div class="card">
-        <h3>Our Mission</h3>
-        <p>To democratize legal knowledge and make Indian criminal law accessible to everyone.</p>
+        <h3 data-i18n="about_h3">Our Mission</h3>
+        <p data-i18n="about_p3">To democratize legal knowledge and make Indian criminal law accessible to everyone.</p>
     </div>
     <div class="card">
-        <h3>Technology</h3>
-        <p>Vidhisethu uses RAG, ChromaDB vector database, Sentence Transformers, Groq LLaMA, and Google Maps for semantic search, AI explanations, and location services.</p>
+        <h3 data-i18n="about_h4">Technology</h3>
+        <p data-i18n="about_p4">Vidhisethu uses RAG, ChromaDB vector database, Sentence Transformers, a local LLM, and Google Maps for semantic search, AI explanations, and location services.</p>
     </div>
     <div class="card">
-        <h3>Disclaimer</h3>
-        <p>Vidhisethu is for educational purposes only. Always consult a qualified legal professional before making legal decisions.</p>
+        <h3 data-i18n="about_h5">Disclaimer</h3>
+        <p data-i18n="about_p5">Vidhisethu is for educational purposes only. Always consult a qualified legal professional before making legal decisions.</p>
     </div>
 </div>
 
@@ -436,20 +476,8 @@
 
     let chatHistory = [];
 
-    const crisisKeywords = [
-        'suicide', 'suicidal', 'kill myself', 'end my life', 'want to die',
-        'sexual abuse', 'sexually abused', 'rape', 'raped',
-        'physical abuse', 'physically abused', 'domestic violence',
-        'child abuse', 'child molest',
-        'murder', 'being murdered', 'going to kill',
-        'being attacked', 'someone attacking',
-        'help me', 'in danger', 'emergency',
-        'i am being abused', 'being abused'
-    ];
-
     function checkCrisis(query) {
-        const lower = query.toLowerCase();
-        return crisisKeywords.some(keyword => lower.includes(keyword));
+        return checkCrisisMultilingual(query);
     }
 
     function findNearbyPolice() {
@@ -485,69 +513,22 @@
 
     function updateThemeButton() {
         const btn = document.querySelector('.theme-toggle');
-        btn.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        btn.textContent = document.body.classList.contains('dark-mode') ? t('nav_light') : t('nav_dark');
     }
 
     initTheme();
+    initLanguageSwitcher(document.getElementById('langSwitchContainer'));
+    applyTranslations();
 
-    const cases = [
-        {
-            title: "State of Maharashtra vs Mohd. Sajid Husain",
-            section: "BNS Section 103 — Murder",
-            summary: "Accused committed murder during a robbery attempt. Court examined intent and premeditation.",
-            verdict: "Convicted. Life imprisonment awarded.",
-            takeaway: "Murder during robbery is treated with maximum severity under BNS."
-        },
-        {
-            title: "Lalita Kumari vs Govt. of UP",
-            section: "BNS Section 173 — FIR Filing",
-            summary: "Supreme Court held that police must register FIR immediately for cognizable offences.",
-            verdict: "Landmark ruling — FIR registration is mandatory.",
-            takeaway: "Police cannot refuse to file FIR for serious offences."
-        },
-        {
-            title: "Arnesh Kumar vs State of Bihar",
-            section: "BNS Section 35 — Arrest Guidelines",
-            summary: "SC laid down strict guidelines for arrest in cases with punishment under 7 years.",
-            verdict: "Police must justify arrest necessity before making it.",
-            takeaway: "Arrest is not automatic — police must apply mind before arresting."
-        },
-        {
-            title: "State vs Vikas Yadav (Nitish Katara Case)",
-            section: "BNS Section 103 — Murder",
-            summary: "Honour killing case. Accused killed victim for relationship with sister from different caste.",
-            verdict: "Convicted for murder. Life imprisonment.",
-            takeaway: "Honour killings are treated as premeditated murder with no leniency."
-        },
-        {
-            title: "Shafin Jahan vs Asokan KM (Hadiya Case)",
-            section: "BNS Section 137 — Kidnapping",
-            summary: "SC examined whether an adult woman can be kept under parents custody against her will.",
-            verdict: "Adult has full right to choose religion and life partner.",
-            takeaway: "Personal liberty cannot be curtailed even by family under BNS."
-        },
-        {
-            title: "Shreya Singhal vs Union of India",
-            section: "BNS Section 196 — Hate Speech",
-            summary: "SC struck down Section 66A of IT Act for being vague and violating free speech.",
-            verdict: "Section 66A unconstitutional.",
-            takeaway: "Online speech restrictions must be specific and proportionate."
-        },
-        {
-            title: "Vishaka vs State of Rajasthan",
-            section: "BNS Section 75 — Sexual Harassment",
-            summary: "Landmark case that led to guidelines against sexual harassment at workplace.",
-            verdict: "Vishaka guidelines established — now codified as POSH Act.",
-            takeaway: "Employers are responsible for preventing workplace sexual harassment."
-        },
-        {
-            title: "KS Puttaswamy vs Union of India",
-            section: "BNS Section 26 — Right to Privacy",
-            summary: "SC unanimously held that privacy is a fundamental right under the Constitution.",
-            verdict: "Right to privacy is a fundamental right.",
-            takeaway: "Any law violating privacy must pass strict scrutiny."
+    // Re-render dynamic content whenever the language changes
+    document.addEventListener('vidhisethu-lang-changed', () => {
+        updateThemeButton();
+        if (document.getElementById('page-cases').classList.contains('active')) {
+            renderCases();
         }
-    ];
+    });
+
+    // Case data now lives in i18n.js (CASES_DATA) and is localized via getLocalizedCases()
 
     function showPage(name) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -584,7 +565,7 @@
             const res = await fetch(`${API}/chat`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ messages: chatHistory })
+                body: JSON.stringify({ messages: chatHistory, language: getCurrentLanguage() })
             });
             const data = await res.json();
 
@@ -594,13 +575,13 @@
             const sectionsHTML = data.relevant_sections.map(s => `
                 <div class="section-card">
                     <h4>Section ${s.section_number} — ${s.title}</h4>
-                    <p>${s.punishment !== 'Not Applicable' ? s.punishment : 'No direct punishment specified'}</p>
+                    <p>${s.punishment !== 'Not Applicable' ? s.punishment : t('no_punishment')}</p>
                 </div>
             `).join('');
             document.getElementById('sectionCards').innerHTML = sectionsHTML;
 
         } catch (err) {
-            appendMessage("assistant", "Error connecting to API. Make sure server is running.");
+            appendMessage("assistant", t('err_api'));
         } finally {
             document.getElementById('aiLoading').style.display = 'none';
         }
@@ -640,7 +621,7 @@
                 if (!res.ok) {
                     document.getElementById('sectionResults').innerHTML = `
                         <div class="card">
-                            <p>❌ IPC Section ${number} not found in our mapping database.</p>
+                            <p>${t('ipc_not_found', { num: number })}</p>
                         </div>`;
                     return;
                 }
@@ -651,8 +632,8 @@
                     <div class="ipc-replaced">
                         <h4>⚠️ IPC Section ${data.ipc_section}</h4>
                         <p style="margin-top:8px; font-weight:600; color:var(--accent);">${data.effective_date_message}</p>
-                        <p style="margin-top:12px; color:var(--text-tertiary);">${data.subject_offence || 'Details not available'}</p>
-                        ${data.key_change_notes ? `<p style="margin-top:8px; color:var(--text-secondary); font-style:italic;">Change Notes: ${data.key_change_notes}</p>` : ''}
+                        <p style="margin-top:12px; color:var(--text-tertiary);">${data.subject_offence || t('details_unavailable')}</p>
+                        ${data.key_change_notes ? `<p style="margin-top:8px; color:var(--text-secondary); font-style:italic;">${t('change_notes_label')} ${data.key_change_notes}</p>` : ''}
                     </div>
                 `;
 
@@ -661,15 +642,15 @@
                         <div class="bns-replacement">
                             <h4>✅ BNS Section ${data.bns_details.section_number} — ${data.bns_details.title}</h4>
                             <p style="margin-top:8px; color:var(--text-tertiary);">${data.bns_details.description}</p>
-                            <p style="margin-top:12px; font-weight:bold;">⚖️ Punishment: ${data.bns_details.punishment}</p>
-                            ${data.bns_details.keywords && data.bns_details.keywords !== 'nan' ? `<p style="margin-top:12px; font-size:0.85rem; color:var(--text-secondary);">Keywords: ${data.bns_details.keywords}</p>` : ''}
+                            <p style="margin-top:12px; font-weight:bold;">${t('punishment_label')} ${data.bns_details.punishment}</p>
+                            ${data.bns_details.keywords && data.bns_details.keywords !== 'nan' ? `<p style="margin-top:12px; font-size:0.85rem; color:var(--text-secondary);">${t('keywords_label')} ${data.bns_details.keywords}</p>` : ''}
                         </div>
                     `;
                 } else {
                     resultHTML += `
                         <div class="bns-replacement">
                             <h4>✅ BNS Section ${data.bns_section}</h4>
-                            <p style="margin-top:8px; color:var(--text-tertiary);">BNS section details not found in database.</p>
+                            <p style="margin-top:8px; color:var(--text-tertiary);">${t('bns_details_missing')}</p>
                         </div>
                     `;
                 }
@@ -679,7 +660,7 @@
                 const res = await fetch(`${API}/section?number=${number}`);
                 
                 if (!res.ok) {
-                    document.getElementById('sectionResults').innerHTML = '<div class="card"><p>Section not found.</p></div>';
+                    document.getElementById('sectionResults').innerHTML = `<div class="card"><p>${t('section_not_found')}</p></div>`;
                     return;
                 }
 
@@ -689,25 +670,26 @@
                     <div class="card">
                         <h3>Section ${data.section_number} — ${data.title}</h3>
                         <p style="margin-top:12px">${data.description}</p>
-                        <p style="margin-top:16px;">⚖️ Punishment: ${data.punishment}</p>
-                        ${data.keywords && data.keywords !== 'nan' ? `<p style="margin-top:12px; font-size:0.85rem">Keywords: ${data.keywords}</p>` : ''}
+                        <p style="margin-top:16px;">${t('punishment_label')} ${data.punishment}</p>
+                        ${data.keywords && data.keywords !== 'nan' ? `<p style="margin-top:12px; font-size:0.85rem">${t('keywords_label')} ${data.keywords}</p>` : ''}
                     </div>
                 `;
             }
         } catch (err) {
-            document.getElementById('sectionResults').innerHTML = '<div class="card"><p>Error connecting to API.</p></div>';
+            document.getElementById('sectionResults').innerHTML = `<div class="card"><p>${t('err_api_section')}</p></div>`;
         } finally {
             document.getElementById('sectionLoading').style.display = 'none';
         }
     }
 
     function renderCases() {
+        const cases = getLocalizedCases();
         document.getElementById('caseList').innerHTML = cases.map(c => `
             <div class="case-card">
                 <h4>${c.title}</h4>
                 <span class="tag">${c.section}</span>
                 <p>${c.summary}</p>
-                <p class="verdict">Verdict: ${c.verdict}</p>
+                <p class="verdict">${t('case_verdict_label')} ${c.verdict}</p>
                 <p style="color: var(--text-secondary); margin-top:8px; font-size:0.9rem">${c.takeaway}</p>
             </div>
         `).join('');
