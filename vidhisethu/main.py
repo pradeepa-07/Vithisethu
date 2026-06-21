@@ -7,6 +7,9 @@ from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 import os
 import json
+import firebase_admin
+from firebase_admin import credentials, db
+from datetime import datetime
 
 load_dotenv()
 
@@ -24,11 +27,14 @@ collection = chroma_client.get_or_create_collection(name="lawlens")
 model = SentenceTransformer('all-MiniLM-L6-v2')
 df = pd.read_excel("bns.xlsx")
 
+# Initialize Firebase
+cred = credentials.Certificate("firebase-key.json")  # use your actual filename
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://vidhisethu-default-rtdb.firebaseio.com'
+})
+
 OLLAMA_MODEL = "gemma2:2b"
 
-# Supported languages for the AI assistant's responses.
-# Maps the language code sent by the frontend to the full language
-# name used to instruct the local LLM.
 LANGUAGE_NAMES = {
     "en": "English",
     "hi": "Hindi",
@@ -42,8 +48,6 @@ LANGUAGE_NAMES = {
 
 
 def get_language_instruction(language: str) -> str:
-    """Builds the instruction line that tells the local LLM which
-    language to answer in. Defaults to English for unknown codes."""
     lang_name = LANGUAGE_NAMES.get(language, "English")
     if lang_name == "English":
         return "Respond in clear, simple English."
@@ -53,6 +57,39 @@ def get_language_instruction(language: str) -> str:
         f"numerals (e.g. 'Section 103') and keep legal proper nouns "
         f"(BNS, IPC, FIR) as-is, but explain everything else in {lang_name}."
     )
+
+
+def build_sections_and_context(metadatas):
+    """Deduplicate sections and build context string."""
+    seen_sections = set()
+    sections = []
+    context = ""
+    for meta in metadatas:
+        sec_num = meta.get('section_number', 'N/A')
+        if sec_num in seen_sections:
+            continue
+        seen_sections.add(sec_num)
+        sections.append({
+            "section_number": sec_num,
+            "title": meta.get('title', 'N/A'),
+            "punishment": meta.get('punishment', 'N/A')
+        })
+        context += f"Section {sec_num}: {meta.get('title')}\n{meta.get('description')}\n\n"
+    return sections, context
+
+
+def save_to_firebase(query, answer, language="en"):
+    """Save chat exchange to Firebase. Never crashes the request if it fails."""
+    try:
+        ref = db.reference('chat_history')
+        ref.push({
+            'query': query,
+            'answer': answer,
+            'language': language,
+            'timestamp': datetime.now().isoformat()
+        })
+    except Exception as e:
+        print(f"Firebase save failed: {e}")
 
 
 try:
@@ -84,7 +121,7 @@ def search(query: str, language: str = "en"):
         query_vector = model.encode(query).tolist()
         results = collection.query(
             query_embeddings=[query_vector],
-            n_results=2
+            n_results=3
         )
 
         metadatas = results.get('metadatas', [[]])[0]
@@ -95,16 +132,7 @@ def search(query: str, language: str = "en"):
                 "relevant_sections": []
             }
 
-        sections = []
-        context = ""
-        for meta in metadatas:
-            sections.append({
-                "section_number": meta.get('section_number', 'N/A'),
-                "title": meta.get('title', 'N/A'),
-                "punishment": meta.get('punishment', 'N/A')
-            })
-            context += f"Section {meta.get('section_number')}: {meta.get('title')}\n{meta.get('description')}\n\n"
-
+        sections, context = build_sections_and_context(metadatas)
         language_instruction = get_language_instruction(language)
 
         response = ollama.chat(
@@ -112,12 +140,12 @@ def search(query: str, language: str = "en"):
             messages=[
                 {
                     "role": "system",
-                    "content": f"""You are a BNS legal assistant. The user asked: '{query}'
+                    "content": f"""You are a legal assistant for India's Bharatiya Nyaya Sanhita (BNS) - India's criminal code that replaced the Indian Penal Code (IPC) in 2024. The user asked: '{query}'
 
 You MUST reference these specific BNS sections in your answer:
 {context}
 
-Always mention the section numbers and explain what they mean. Be concise.
+Always mention the section numbers and explain what they mean. Be concise. Do NOT add repeated disclaimers about not being able to give legal advice.
 
 {language_instruction}"""
                 },
@@ -126,12 +154,15 @@ Always mention the section numbers and explain what they mean. Be concise.
                     "content": query
                 }
             ],
-            options={"num_predict": 250}
+            options={"num_predict": 280}
         )
+
+        answer_text = response['message']['content']
+        save_to_firebase(query, answer_text, language)
 
         return {
             "query": query,
-            "ai_explanation": response['message']['content'],
+            "ai_explanation": answer_text,
             "relevant_sections": sections
         }
 
@@ -150,40 +181,29 @@ def chat(payload: dict):
     try:
         query = messages[-1].get("content", "")
         if not query.strip():
-            raise HTTPException(
-                status_code=400, detail="Last message cannot be empty")
+            raise HTTPException(status_code=400, detail="Last message cannot be empty")
 
         recent_messages = messages[-6:]
 
         query_vector = model.encode(query).tolist()
         results = collection.query(
             query_embeddings=[query_vector],
-            n_results=2
+            n_results=3
         )
 
         metadatas = results.get('metadatas', [[]])[0]
-        sections = []
-        context = ""
-
-        if metadatas:
-            for meta in metadatas:
-                sections.append({
-                    "section_number": meta.get('section_number', 'N/A'),
-                    "title": meta.get('title', 'N/A'),
-                    "punishment": meta.get('punishment', 'N/A')
-                })
-                context += f"Section {meta.get('section_number')}: {meta.get('title')}\n{meta.get('description')}\n\n"
+        sections, context = build_sections_and_context(metadatas) if metadatas else ([], "")
 
         language_instruction = get_language_instruction(language)
 
         system_prompt = {
             "role": "system",
-            "content": f"""You are a BNS legal assistant. The user just asked: '{query}'
+            "content": f"""You are a legal assistant for India's Bharatiya Nyaya Sanhita (BNS) - India's criminal code that replaced the Indian Penal Code (IPC) in 2024. The user just asked: '{query}'
 
 You MUST reference these specific BNS sections in your answer:
 {context if context else 'None found - use conversation context only.'}
 
-Always mention the section numbers and explain what they mean. Be concise.
+Always mention the section numbers and explain what they mean. Be concise. Do NOT add repeated disclaimers about not being able to give legal advice.
 
 {language_instruction}"""
         }
@@ -193,11 +213,14 @@ Always mention the section numbers and explain what they mean. Be concise.
         response = ollama.chat(
             model=OLLAMA_MODEL,
             messages=ollama_messages,
-            options={"num_predict": 250}
+            options={"num_predict": 280}
         )
 
+        answer_text = response['message']['content']
+        save_to_firebase(query, answer_text, language)
+
         return {
-            "answer": response['message']['content'],
+            "answer": answer_text,
             "relevant_sections": sections
         }
 
@@ -227,15 +250,13 @@ def get_section(number: int):
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=500, detail=f"Section lookup failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Section lookup failed: {str(e)}")
 
 
 @app.get("/ipc/{ipc_number}")
 def ipc_lookup(ipc_number: str):
     if ipc_number not in ipc_bns_map:
-        raise HTTPException(
-            status_code=404, detail=f"IPC Section {ipc_number} not found in mapping")
+        raise HTTPException(status_code=404, detail=f"IPC Section {ipc_number} not found in mapping")
 
     mapping = ipc_bns_map[ipc_number]
     bns_num = mapping['bns_section']
@@ -243,8 +264,7 @@ def ipc_lookup(ipc_number: str):
 
     effective_date_msg = f"IPC Section {ipc_number} was changed to BNS Section {bns_num} on July 1, 2024"
 
-    result = df[df['section_number'].astype(
-        str).str.strip() == str(bns_num).strip()]
+    result = df[df['section_number'].astype(str).str.strip() == str(bns_num).strip()]
 
     if result.empty:
         try:
