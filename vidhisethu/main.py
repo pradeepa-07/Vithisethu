@@ -26,6 +26,35 @@ df = pd.read_excel("bns.xlsx")
 
 OLLAMA_MODEL = "gemma2:2b"
 
+# Supported languages for the AI assistant's responses.
+# Maps the language code sent by the frontend to the full language
+# name used to instruct the local LLM.
+LANGUAGE_NAMES = {
+    "en": "English",
+    "hi": "Hindi",
+    "ta": "Tamil",
+    "te": "Telugu",
+    "kn": "Kannada",
+    "ml": "Malayalam",
+    "bn": "Bengali",
+    "mr": "Marathi",
+}
+
+
+def get_language_instruction(language: str) -> str:
+    """Builds the instruction line that tells the local LLM which
+    language to answer in. Defaults to English for unknown codes."""
+    lang_name = LANGUAGE_NAMES.get(language, "English")
+    if lang_name == "English":
+        return "Respond in clear, simple English."
+    return (
+        f"Respond entirely in {lang_name}, using the {lang_name} script "
+        f"(not transliterated English). Keep BNS/IPC section numbers in "
+        f"numerals (e.g. 'Section 103') and keep legal proper nouns "
+        f"(BNS, IPC, FIR) as-is, but explain everything else in {lang_name}."
+    )
+
+
 try:
     with open("IPC_to_BNS_Lookup.json", "r") as f:
         ipc_bns_data = json.load(f)
@@ -47,7 +76,7 @@ def home():
 
 
 @app.get("/search")
-def search(query: str):
+def search(query: str, language: str = "en"):
     if not query.strip():
         raise HTTPException(status_code=400, detail="Query cannot be empty")
 
@@ -76,6 +105,8 @@ def search(query: str):
             })
             context += f"Section {meta.get('section_number')}: {meta.get('title')}\n{meta.get('description')}\n\n"
 
+        language_instruction = get_language_instruction(language)
+
         response = ollama.chat(
             model=OLLAMA_MODEL,
             messages=[
@@ -86,7 +117,9 @@ def search(query: str):
 You MUST reference these specific BNS sections in your answer:
 {context}
 
-Always mention the section numbers and explain what they mean. Be concise."""
+Always mention the section numbers and explain what they mean. Be concise.
+
+{language_instruction}"""
                 },
                 {
                     "role": "user",
@@ -109,6 +142,7 @@ Always mention the section numbers and explain what they mean. Be concise."""
 @app.post("/chat")
 def chat(payload: dict):
     messages = payload.get("messages", [])
+    language = payload.get("language", "en")
 
     if not messages:
         raise HTTPException(status_code=400, detail="Messages cannot be empty")
@@ -140,6 +174,8 @@ def chat(payload: dict):
                 })
                 context += f"Section {meta.get('section_number')}: {meta.get('title')}\n{meta.get('description')}\n\n"
 
+        language_instruction = get_language_instruction(language)
+
         system_prompt = {
             "role": "system",
             "content": f"""You are a BNS legal assistant. The user just asked: '{query}'
@@ -147,7 +183,9 @@ def chat(payload: dict):
 You MUST reference these specific BNS sections in your answer:
 {context if context else 'None found - use conversation context only.'}
 
-Always mention the section numbers and explain what they mean. Be concise."""
+Always mention the section numbers and explain what they mean. Be concise.
+
+{language_instruction}"""
         }
 
         ollama_messages = [system_prompt] + recent_messages

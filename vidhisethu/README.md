@@ -3,20 +3,28 @@
 An AI-powered Bharatiya Nyaya Sanhita (BNS) Legal Assistant using RAG, Vector Search, and a fully local LLM — no API keys, no rate limits, no internet dependency.
 
 ## 🚀 Features
-- **AI Assistant** — Describe your situation in plain English, get relevant BNS sections explained simply (with chat history)
+- **Multi-language UI** — Use Vidhisethu in English, Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, or Marathi, with the AI Assistant replying in the language you pick
+- **AI Assistant** — Describe your situation in plain English (or any supported language), get relevant BNS sections explained simply (with chat history)
 - **Section Lookup** — Enter BNS section number OR old IPC section number to get details
 - **IPC to BNS Mapping** — Shows which BNS section replaced any given IPC section, with effective date
-- **Crisis Detection** — Detects sensitive situations (abuse, threats, self-harm) and shows helplines + nearest police station via Google Maps
-- **Case Library** — Landmark Supreme Court cases simplified
+- **Crisis Detection** — Detects sensitive situations (abuse, threats, self-harm) in any supported language and shows helplines + nearest police station via Google Maps
+- **Case Library** — Landmark Supreme Court cases simplified, with summaries available in every supported language
 
 ## 🛠️ Tech Stack
 - **RAG** — Retrieval Augmented Generation pipeline
 - **ChromaDB** — Local vector database for semantic search
 - **Sentence Transformers** — Text embeddings (all-MiniLM-L6-v2)
-- **Ollama (Gemma 2:2b)** — Fully local LLM, zero API cost, runs offline
+- **Ollama (Gemma 2:2b)** — Fully local LLM, zero API cost, runs offline, prompted to answer in the user's chosen language
 - **FastAPI** — Backend REST API
 - **Google Maps** — Nearest police station lookup
-- **HTML/CSS/JS** — Frontend
+- **HTML/CSS/JS** — Frontend, with `i18n.js` providing the translation dictionary and language-switcher UI for English, Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, and Marathi
+
+## 🌐 Language Support
+Click the language switcher (globe icon) in the navigation bar on either page to change languages. Your choice is remembered (saved in your browser) and applies to:
+- All page text, buttons, and labels
+- The crisis-detection keyword list (works in every supported language)
+- The Case Library summaries
+- The AI Assistant's replies — the backend instructs the local LLM to answer in the selected language
 
 ## ⚙️ Setup Instructions
 
